@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Setono\SyliusLagersystemPlugin\DependencyInjection;
 
+use function method_exists;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use function method_exists;
 
 final class Configuration implements ConfigurationInterface
 {
