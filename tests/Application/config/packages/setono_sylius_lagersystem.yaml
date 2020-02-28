@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@SetonoSyliusLagersystemPlugin/Resources/config/app/config.yaml" }

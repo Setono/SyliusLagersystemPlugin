@@ -41,7 +41,7 @@ return [
 ````yaml
 # config/routes/setono_sylius_lagersystem.yaml
 setono_sylius_lagersystem:
-    resource: "@SetonoSyliusPickupPointPlugin/Resources/config/routing.yaml"
+    resource: "@SetonoSyliusLagersystemPlugin/Resources/config/routes.yaml"
 ````
 
 #### Import application config

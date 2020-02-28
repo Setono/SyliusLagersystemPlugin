@@ -1,0 +1,2 @@
+setono_sylius_lagersystem:
+    resource: "@SetonoSyliusLagersystemPlugin/Resources/config/routes.yaml"
