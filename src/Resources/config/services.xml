@@ -4,6 +4,8 @@
            xmlns="http://symfony.com/schema/dic/services"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <imports>
-        <import resource="services/**/*"/>
+        <import resource="services/actions.xml"/>
+        <import resource="services/factories.xml"/>
+        <import resource="services/repositories.xml"/>
     </imports>
 </container>

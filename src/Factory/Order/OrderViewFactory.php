@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Setono\SyliusLagersystemPlugin\Factory\Order;
 
 use Setono\SyliusLagersystemPlugin\Factory\Address\AddressViewFactoryInterface;
+use Setono\SyliusLagersystemPlugin\Factory\PaymentViewFactoryInterface;
+use Setono\SyliusLagersystemPlugin\Factory\ShipmentViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Order\OrderView;
 use Sylius\Component\Core\Model\OrderInterface;
 use Webmozart\Assert\Assert;
@@ -14,14 +16,24 @@ class OrderViewFactory implements OrderViewFactoryInterface
     /** @var AddressViewFactoryInterface */
     protected $addressViewFactory;
 
+    /** @var ShipmentViewFactoryInterface */
+    protected $shipmentViewFactory;
+
+    /** @var PaymentViewFactoryInterface */
+    protected $paymentViewFactory;
+
     /** @var string */
     protected $orderViewClass;
 
     public function __construct(
         AddressViewFactoryInterface $addressViewFactory,
+        ShipmentViewFactoryInterface $shipmentViewFactory,
+        PaymentViewFactoryInterface $paymentViewFactory,
         string $orderViewClass
     ) {
         $this->addressViewFactory = $addressViewFactory;
+        $this->shipmentViewFactory = $shipmentViewFactory;
+        $this->paymentViewFactory = $paymentViewFactory;
         $this->orderViewClass = $orderViewClass;
     }
 
@@ -33,6 +45,9 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $locale = $channel->getDefaultLocale();
         Assert::notNull($locale);
 
+        $localeCode = $locale->getCode();
+        Assert::notNull($localeCode);
+
         $checkoutCompletedAt = $order->getCheckoutCompletedAt();
         Assert::notNull($checkoutCompletedAt);
 
@@ -42,11 +57,19 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $orderView->number = $order->getNumber();
         $orderView->channel = $channel->getCode();
         $orderView->currencyCode = $order->getCurrencyCode();
-        $orderView->localeCode = $locale->getCode();
+        $orderView->localeCode = $localeCode;
         $orderView->state = $order->getState();
         $orderView->checkoutState = $order->getCheckoutState();
         $orderView->checkoutCompletedAt = $checkoutCompletedAt->format('c');
         $orderView->paymentState = $order->getPaymentState();
+
+        foreach ($order->getShipments() as $shipment) {
+            $orderView->shipments[] = $this->shipmentViewFactory->create($shipment, $localeCode);
+        }
+
+        foreach ($order->getPayments() as $payment) {
+            $orderView->payments[] = $this->paymentViewFactory->create($payment, $localeCode);
+        }
 
         if (null !== $order->getShippingAddress()) {
             $orderView->shippingAddress = $this->addressViewFactory->create($order->getShippingAddress());

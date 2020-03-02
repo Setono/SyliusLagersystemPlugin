@@ -21,6 +21,10 @@ final class SetonoSyliusLagersystemExtensionTest extends AbstractExtensionTestCa
             'page' => View\PageView::class,
             'page_links' => View\PageLinksView::class,
             'address' => View\AddressView::class,
+            'shipping_method' => View\ShippingMethodView::class,
+            'shipment' => View\ShipmentView::class,
+            'payment_method' => View\PaymentMethodView::class,
+            'payment' => View\PaymentView::class,
             'order' => View\Order\OrderView::class,
         ];
 

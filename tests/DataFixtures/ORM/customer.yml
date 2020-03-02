@@ -15,7 +15,7 @@ Sylius\Component\Core\Model\Customer:
         emailCanonical: "igor.mukhin@gmail.com"
         gender: "m"
         group: "@retail"
-        phoneNumber: "+380951234567"
+        phoneNumber: "380951234567"
         birthday: <dateTimeBetween("-200 days", "now")>
 
 Sylius\Component\Customer\Model\CustomerGroup:

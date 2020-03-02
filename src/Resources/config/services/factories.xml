@@ -1,0 +1,49 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <service id="setono_sylius_lagersystem.factory.page_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\PageViewFactory">
+            <argument type="service" id="router"/>
+            <argument type="string">%setono_sylius_lagersystem.view.page.class%</argument>
+            <argument type="string">%setono_sylius_lagersystem.view.page_links.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.address_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\Address\AddressViewFactory">
+            <argument type="string">%setono_sylius_lagersystem.view.address.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.shipping_method_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\ShippingMethodViewFactory">
+            <argument type="string">%setono_sylius_lagersystem.view.shipping_method.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.shipment_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\ShipmentViewFactory">
+            <argument type="service" id="setono_sylius_lagersystem.factory.shipping_method_view_factory"/>
+            <argument type="string">%setono_sylius_lagersystem.view.shipment.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.payment_method_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\PaymentMethodViewFactory">
+            <argument type="string">%setono_sylius_lagersystem.view.payment_method.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.payment_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\PaymentViewFactory">
+            <argument type="service" id="setono_sylius_lagersystem.factory.payment_method_view_factory"/>
+            <argument type="string">%setono_sylius_lagersystem.view.payment.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.order_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\Order\OrderViewFactory">
+            <argument type="service" id="setono_sylius_lagersystem.factory.address_view_factory"/>
+            <argument type="service" id="setono_sylius_lagersystem.factory.shipment_view_factory"/>
+            <argument type="service" id="setono_sylius_lagersystem.factory.payment_view_factory"/>
+            <argument type="string">%setono_sylius_lagersystem.view.order.class%</argument>
+        </service>
+
+    </services>
+</container>

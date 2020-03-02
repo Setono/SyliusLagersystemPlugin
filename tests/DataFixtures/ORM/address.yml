@@ -2,7 +2,7 @@ Sylius\Component\Core\Model\Address:
     customer_igor_home_address:
         firstName: "Igor"
         lastName: "Mukhin"
-        phoneNumber: "+380951234567"
+        phoneNumber: "380951234567"
         countryCode: "UA"
         street: "Main street"
         city: "Odesa"
@@ -11,7 +11,7 @@ Sylius\Component\Core\Model\Address:
     customer_igor_work_address:
         firstName: "Joachim"
         lastName: "Loevgaard"
-        phoneNumber: "+4512345678"
+        phoneNumber: "4512345678"
         company: "Setono"
         countryCode: "DK"
         street: "Main street"

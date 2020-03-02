@@ -20,6 +20,26 @@
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
             "paymentState": "awaiting_payment",
+            "payments": [
+                {
+                    "state": "new",
+                    "method": {
+                        "code": "cash_on_delivery",
+                        "name": "Cash on delivery",
+                        "description": "@string@"
+                    }
+                }
+            ],
+            "shipments": [
+                {
+                    "state": "ready",
+                    "method": {
+                        "code": "UPS",
+                        "name": "UPS",
+                        "description": "@string@"
+                    }
+                }
+            ],
             "shippingAddress": {
                 "firstName": "Igor",
                 "lastName": "Mukhin",
@@ -27,7 +47,7 @@
                 "street": "Main street",
                 "city": "Odesa",
                 "postcode": "65000",
-                "phoneNumber": "+380951234567"
+                "phoneNumber": "380951234567"
             },
             "billingAddress": {
                 "firstName": "Igor",
@@ -36,7 +56,7 @@
                 "street": "Main street",
                 "city": "Odesa",
                 "postcode": "65000",
-                "phoneNumber": "+380951234567"
+                "phoneNumber": "380951234567"
             },
             "total": 6299
         },
@@ -50,6 +70,26 @@
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
             "paymentState": "paid",
+            "payments": [
+                {
+                    "state": "paid",
+                    "method": {
+                        "code": "cash_on_delivery",
+                        "name": "Cash on delivery",
+                        "description": "@string@"
+                    }
+                }
+            ],
+            "shipments": [
+                {
+                    "state": "shipped",
+                    "method": {
+                        "code": "UPS",
+                        "name": "UPS",
+                        "description": "@string@"
+                    }
+                }
+            ],
             "shippingAddress": {
                 "firstName": "Joachim",
                 "lastName": "Loevgaard",
@@ -58,7 +98,7 @@
                 "city": "Aalborg",
                 "postcode": "123456",
                 "company": "Setono",
-                "phoneNumber": "+4512345678"
+                "phoneNumber": "4512345678"
             },
             "billingAddress": {
                 "firstName": "Joachim",
@@ -68,7 +108,7 @@
                 "city": "Aalborg",
                 "postcode": "123456",
                 "company": "Setono",
-                "phoneNumber": "+4512345678"
+                "phoneNumber": "4512345678"
             },
             "total": 0
         }
