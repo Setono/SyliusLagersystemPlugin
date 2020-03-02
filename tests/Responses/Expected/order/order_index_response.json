@@ -58,7 +58,16 @@
                 "postcode": "65000",
                 "phoneNumber": "380951234567"
             },
-            "total": 6299
+            "total": 6299,
+            "customer": {
+                "id": @integer@,
+                "firstName": "Igor",
+                "lastName": "Mukhin",
+                "email": "igor.mukhin@gmail.com",
+                "birthday": "@string@.isDateTime()",
+                "gender": "m",
+                "phoneNumber": "380951234567"
+            }
         },
         {
             "id": @integer@,
@@ -110,7 +119,16 @@
                 "company": "Setono",
                 "phoneNumber": "4512345678"
             },
-            "total": 0
+            "total": 0,
+            "customer": {
+                "id": @integer@,
+                "firstName": "Igor",
+                "lastName": "Mukhin",
+                "email": "igor.mukhin@gmail.com",
+                "birthday": "@string@.isDateTime()",
+                "gender": "m",
+                "phoneNumber": "380951234567"
+            }
         }
     ]
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Setono\SyliusLagersystemPlugin\View\Order;
 
 use Setono\SyliusLagersystemPlugin\View\AddressView;
+use Setono\SyliusLagersystemPlugin\View\Customer\CustomerView;
 use Setono\SyliusLagersystemPlugin\View\PaymentView;
 use Setono\SyliusLagersystemPlugin\View\ShipmentView;
 
@@ -51,4 +52,7 @@ class OrderView
 
     /** @var int|null */
     public $total;
+
+    /** @var CustomerView|null */
+    public $customer;
 }

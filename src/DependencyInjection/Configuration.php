@@ -37,6 +37,7 @@ final class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('page')->defaultValue(View\PageView::class)->end()
                         ->scalarNode('page_links')->defaultValue(View\PageLinksView::class)->end()
+                        ->scalarNode('customer')->defaultValue(View\Customer\CustomerView::class)->end()
                         ->scalarNode('address')->defaultValue(View\AddressView::class)->end()
                         ->scalarNode('shipping_method')->defaultValue(View\ShippingMethodView::class)->end()
                         ->scalarNode('shipment')->defaultValue(View\ShipmentView::class)->end()
