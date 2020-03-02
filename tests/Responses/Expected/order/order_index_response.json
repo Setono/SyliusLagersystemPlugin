@@ -37,7 +37,8 @@
                 "city": "Odesa",
                 "postcode": "65000",
                 "phoneNumber": "+380951234567"
-            }
+            },
+            "total": 6299
         },
         {
             "id": @integer@,
@@ -68,8 +69,8 @@
                 "postcode": "123456",
                 "company": "Setono",
                 "phoneNumber": "+4512345678"
-            }
-
+            },
+            "total": 0
         }
     ]
 }

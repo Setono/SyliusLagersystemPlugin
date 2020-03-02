@@ -1,3 +1,33 @@
+Sylius\Component\Order\Model\Adjustment:
+    order_1_item_unit_1_adjustment_order_unit_promotion_1:
+        type: order_unit_promotion
+        amount: -99
+    order_1_item_unit_1_adjustment_order_unit_promotion_2:
+        type: order_unit_promotion
+        amount: -99
+    order_1_adjustment_shipping:
+        type: shipping
+        amount: 500
+    order_1_adjustment_tax:
+        type: tax
+        amount: 399
+        neutral: true
+
+Sylius\Component\Core\Model\OrderItemUnit:
+    order_1_item_1_unit_1:
+        __construct: ["@order_1_item_1"]
+        adjustments: ["@order_1_item_unit_1_adjustment_order_unit_promotion_1"]
+    order_1_item_1_unit_2:
+        __construct: ["@order_1_item_1"]
+        adjustments: ["@order_1_item_unit_1_adjustment_order_unit_promotion_2"]
+
+Sylius\Component\Core\Model\OrderItem:
+    order_1_item_1:
+        variant: "@mug_variant_red"
+        unitPrice: 1999
+        units: ["@order_1_item_1_unit_1", "@order_1_item_1_unit_2"]
+        adjustments: []
+
 Sylius\Component\Core\Model\Order:
     order_1:
         number: 000000001
@@ -16,7 +46,11 @@ Sylius\Component\Core\Model\Order:
         shippingState: ready
         shippingAddress: "@customer_igor_home_address"
         billingAddress: "@customer_igor_home_address"
-        
+        notes: "Order 1 note"
+        items: ["@order_1_item_1"]
+        adjustments: ["@order_1_adjustment_shipping", "@order_1_adjustment_tax"]
+        createdAt: "<(new DateTime())>"
+
     order_2:
         number: 000000002
         customer: "@customer_igor"

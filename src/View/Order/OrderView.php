@@ -40,4 +40,7 @@ class OrderView
 
     /** @var AddressView */
     public $billingAddress;
+
+    /** @var int|null */
+    public $total;
 }

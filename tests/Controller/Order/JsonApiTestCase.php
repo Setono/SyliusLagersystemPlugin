@@ -15,6 +15,7 @@ abstract class JsonApiTestCase extends BaseJsonApiTestCase
         'shipping.yml',
         'customer.yml',
         'address.yml',
+        'product.yml',
         'order.yml',
     ];
 

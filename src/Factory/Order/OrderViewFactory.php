@@ -56,6 +56,8 @@ class OrderViewFactory implements OrderViewFactoryInterface
             $orderView->billingAddress = $this->addressViewFactory->create($order->getBillingAddress());
         }
 
+        $orderView->total = $order->getTotal();
+
         return $orderView;
     }
 }
