@@ -8,7 +8,7 @@ namespace Setono\SyliusLagersystemPlugin\View;
 
 class PaymentView
 {
-    /** @var string */
+    /** @var string|null */
     public $state;
 
     /** @var PaymentMethodView|null */

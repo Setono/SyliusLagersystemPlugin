@@ -11,6 +11,8 @@ use Setono\SyliusLagersystemPlugin\Factory\ShipmentViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Order\OrderView;
 use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Component\Core\Model\PaymentInterface;
+use Sylius\Component\Core\Model\ShipmentInterface;
 use Webmozart\Assert\Assert;
 
 class OrderViewFactory implements OrderViewFactoryInterface
@@ -74,10 +76,12 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $orderView->checkoutCompletedAt = $checkoutCompletedAt->format('c');
         $orderView->paymentState = $order->getPaymentState();
 
+        /** @var ShipmentInterface $shipment */
         foreach ($order->getShipments() as $shipment) {
             $orderView->shipments[] = $this->shipmentViewFactory->create($shipment, $localeCode);
         }
 
+        /** @var PaymentInterface $payment */
         foreach ($order->getPayments() as $payment) {
             $orderView->payments[] = $this->paymentViewFactory->create($payment, $localeCode);
         }
