@@ -16,7 +16,7 @@
             "channel": "US_WEB",
             "currencyCode": "USD",
             "localeCode": "en_US",
-            "state": "awaiting_payment",
+            "state": "new",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
             "paymentState": "awaiting_payment"
@@ -27,7 +27,7 @@
             "channel": "US_WEB",
             "currencyCode": "USD",
             "localeCode": "en_US",
-            "state": "paid",
+            "state": "fulfilled",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
             "paymentState": "paid"

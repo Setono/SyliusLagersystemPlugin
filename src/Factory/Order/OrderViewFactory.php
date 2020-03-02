@@ -37,7 +37,7 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $orderView->channel = $channel->getCode();
         $orderView->currencyCode = $order->getCurrencyCode();
         $orderView->localeCode = $locale->getCode();
-        $orderView->state = $order->getPaymentState();
+        $orderView->state = $order->getState();
         $orderView->checkoutState = $order->getCheckoutState();
         $orderView->checkoutCompletedAt = $checkoutCompletedAt->format('c');
         $orderView->paymentState = $order->getPaymentState();
