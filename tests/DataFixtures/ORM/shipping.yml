@@ -1,0 +1,31 @@
+Sylius\Component\Core\Model\ShippingMethod:
+    shipping_method_ups:
+        code: "UPS"
+        enabled: true
+        calculator: "flat_rate"
+        configuration:
+            US_WEB:
+                amount: 500
+        zone: "@zone_us"
+        currentLocale: "en_US"
+        translations: ["@shipping_method_ups_translation_en_us"]
+        channels: ["@channel_us_web"]
+
+Sylius\Component\Shipping\Model\ShippingMethodTranslation:
+    shipping_method_ups_translation_en_us:
+        name: "UPS"
+        locale: "en_US"
+        description: <paragraph(2)>
+        translatable: "@shipping_method_ups"
+
+Sylius\Component\Addressing\Model\Zone:
+    zone_us:
+        code: "US"
+        name: "United States"
+        type: "country"
+        scope: "all"
+        members: ["@zone_member_us"]
+
+Sylius\Component\Addressing\Model\ZoneMember:
+    zone_member_us:
+        code: "US"

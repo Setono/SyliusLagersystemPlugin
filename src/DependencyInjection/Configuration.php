@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Setono\SyliusLagersystemPlugin\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use function method_exists;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Setono\SyliusLagersystemPlugin\View;
 
 final class Configuration implements ConfigurationInterface
 {
@@ -20,6 +22,26 @@ final class Configuration implements ConfigurationInterface
             $rootNode = $treeBuilder->root('setono_sylius_lagersystem');
         }
 
+        $this->buildViewClassesNode($rootNode);
+
         return $treeBuilder;
     }
+
+    private function buildViewClassesNode(ArrayNodeDefinition $rootNode): void
+    {
+        $rootNode
+            ->addDefaultsIfNotSet()
+            ->children()
+                ->arrayNode('view_classes')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('page')->defaultValue(View\PageView::class)->end()
+                        ->scalarNode('page_links')->defaultValue(View\PageLinksView::class)->end()
+                        ->scalarNode('order')->defaultValue(View\Order\OrderView::class)->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
+    }
+
 }

@@ -1,6 +1,0 @@
-jms_serializer:
-    metadata:
-        directories:
-            setono-sylius-lagersystem:
-                namespace_prefix: "Sylius\\Component\\Core"
-                path: "@SetonoSyliusLagersystemPlugin/Resources/config/serializer"

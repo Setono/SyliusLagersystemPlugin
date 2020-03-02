@@ -1,0 +1,36 @@
+{
+    "page": 1,
+    "limit": 10,
+    "pages": 1,
+    "total": 2,
+    "links": {
+        "self": "/api/lagersystem/orders?page=1&limit=10",
+        "first": "/api/lagersystem/orders?page=1&limit=10",
+        "last": "/api/lagersystem/orders?page=1&limit=10",
+        "next": "/api/lagersystem/orders?page=1&limit=10"
+    },
+    "items": [
+        {
+            "id": @integer@,
+            "number": "1",
+            "channel": "US_WEB",
+            "currencyCode": "USD",
+            "localeCode": "en_US",
+            "state": "awaiting_payment",
+            "checkoutState": "completed",
+            "checkoutCompletedAt": "@string@.isDateTime()",
+            "paymentState": "awaiting_payment"
+        },
+        {
+            "id": @integer@,
+            "number": "2",
+            "channel": "US_WEB",
+            "currencyCode": "USD",
+            "localeCode": "en_US",
+            "state": "paid",
+            "checkoutState": "completed",
+            "checkoutCompletedAt": "@string@.isDateTime()",
+            "paymentState": "paid"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+Sylius\Bundle\AdminApiBundle\Model\Client:
+    oauth:
+        randomId: client_id
+        secret: secret
+        allowedGrantTypes: [password, access_token, refresh_token]
+
+Sylius\Component\Core\Model\AdminUser:
+    admin:
+        plainPassword: sylius
+        roles: [ROLE_API_ACCESS]
+        enabled: true
+        email: api@sylius.com
+        username: sylius
+        localeCode: en
+
+Sylius\Bundle\AdminApiBundle\Model\AccessToken:
+    oauth_access_token:
+        client: "@oauth"
+        user: "@admin"
+        token: AdminOauthSampleToken

@@ -1,0 +1,12 @@
+<container xmlns="http://symfony.com/schema/dic/services">
+    <services>
+
+        <service id="setono_sylius_lagersystem.view_repository.order_view_repository"
+                 class="Setono\SyliusLagersystemPlugin\ViewRepository\Order\OrderViewRepository">
+            <argument type="service" id="sylius.repository.order" />
+            <argument type="service" id="setono_sylius_lagersystem.factory.page_view_factory" />
+            <argument type="service" id="setono_sylius_lagersystem.factory.order_view_factory" />
+        </service>
+
+    </services>
+</container>

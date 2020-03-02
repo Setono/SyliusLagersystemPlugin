@@ -1,0 +1,56 @@
+Sylius\Component\Core\Model\Order:
+    order_1:
+        number: 000000001
+        customer: "@customer_igor"
+        channel: "@channel_us_web"
+        currencyCode: USD
+        localeCode: en_US
+        state: new
+        checkoutState: completed
+        checkoutCompletedAt: "<(new DateTime())>"
+        payments:
+            - "@payment_1"
+        paymentState: awaiting_payment
+        shipments:
+            - "@shipment_1"
+        shippingState: ready
+        shippingAddress: "@customer_igor_home_address"
+        billingAddress: "@customer_igor_home_address"
+        
+    order_2:
+        number: 000000002
+        customer: "@customer_igor"
+        channel: "@channel_us_web"
+        currencyCode: USD
+        localeCode: en_US
+        state: fulfilled
+        checkoutState: completed
+        checkoutCompletedAt: "<(new DateTime())>"
+        payments:
+            - "@payment_2"
+        paymentState: paid
+        shipments:
+            - "@shipment_2"
+        shippingState: shipped
+        shippingAddress: "@customer_igor_work_address"
+        billingAddress: "@customer_igor_work_address"
+
+Sylius\Component\Core\Model\Payment:
+    payment_1:
+        state: new
+        method: "@cash_on_delivery"
+        amount: 100
+        currencyCode: USD
+    payment_2:
+        state: paid
+        method: "@cash_on_delivery"
+        amount: 100
+        currencyCode: USD
+
+Sylius\Component\Core\Model\Shipment:
+    shipment_1:
+        state: ready
+        method: "@shipping_method_ups"
+    shipment_2:
+        state: shipped
+        method: "@shipping_method_ups"
