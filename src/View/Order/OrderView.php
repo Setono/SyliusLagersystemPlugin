@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Setono\SyliusLagersystemPlugin\View\Order;
 
+use Setono\SyliusLagersystemPlugin\View\AddressView;
+
 class OrderView
 {
     /** @var int|null */
@@ -32,4 +34,10 @@ class OrderView
 
     /** @var string|null */
     public $paymentState;
+
+    /** @var AddressView */
+    public $shippingAddress;
+
+    /** @var AddressView */
+    public $billingAddress;
 }

@@ -4,18 +4,24 @@ declare(strict_types=1);
 
 namespace Setono\SyliusLagersystemPlugin\Factory\Order;
 
+use Setono\SyliusLagersystemPlugin\Factory\Address\AddressViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Order\OrderView;
 use Sylius\Component\Core\Model\OrderInterface;
 use Webmozart\Assert\Assert;
 
 class OrderViewFactory implements OrderViewFactoryInterface
 {
+    /** @var AddressViewFactoryInterface */
+    protected $addressViewFactory;
+
     /** @var string */
     protected $orderViewClass;
 
     public function __construct(
+        AddressViewFactoryInterface $addressViewFactory,
         string $orderViewClass
     ) {
+        $this->addressViewFactory = $addressViewFactory;
         $this->orderViewClass = $orderViewClass;
     }
 
@@ -41,6 +47,14 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $orderView->checkoutState = $order->getCheckoutState();
         $orderView->checkoutCompletedAt = $checkoutCompletedAt->format('c');
         $orderView->paymentState = $order->getPaymentState();
+
+        if (null !== $order->getShippingAddress()) {
+            $orderView->shippingAddress = $this->addressViewFactory->create($order->getShippingAddress());
+        }
+
+        if (null !== $order->getBillingAddress()) {
+            $orderView->billingAddress = $this->addressViewFactory->create($order->getBillingAddress());
+        }
 
         return $orderView;
     }

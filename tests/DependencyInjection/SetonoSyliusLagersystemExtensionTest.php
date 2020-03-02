@@ -20,6 +20,7 @@ final class SetonoSyliusLagersystemExtensionTest extends AbstractExtensionTestCa
         $nameToClass = [
             'page' => View\PageView::class,
             'page_links' => View\PageLinksView::class,
+            'address' => View\AddressView::class,
             'order' => View\Order\OrderView::class,
         ];
 

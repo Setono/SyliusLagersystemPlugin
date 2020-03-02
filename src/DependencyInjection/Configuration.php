@@ -37,6 +37,7 @@ final class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('page')->defaultValue(View\PageView::class)->end()
                         ->scalarNode('page_links')->defaultValue(View\PageLinksView::class)->end()
+                        ->scalarNode('address')->defaultValue(View\AddressView::class)->end()
                         ->scalarNode('order')->defaultValue(View\Order\OrderView::class)->end()
                     ->end()
                 ->end()

@@ -23,6 +23,7 @@ final class ConfigurationTest extends TestCase
             'view_classes' => [
                 'page' => View\PageView::class,
                 'page_links' => View\PageLinksView::class,
+                'address' => View\AddressView::class,
                 'order' => View\Order\OrderView::class,
             ],
         ], 'view_classes');

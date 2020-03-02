@@ -19,7 +19,25 @@
             "state": "new",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
-            "paymentState": "awaiting_payment"
+            "paymentState": "awaiting_payment",
+            "shippingAddress": {
+                "firstName": "Igor",
+                "lastName": "Mukhin",
+                "countryCode": "UA",
+                "street": "Main street",
+                "city": "Odesa",
+                "postcode": "65000",
+                "phoneNumber": "+380951234567"
+            },
+            "billingAddress": {
+                "firstName": "Igor",
+                "lastName": "Mukhin",
+                "countryCode": "UA",
+                "street": "Main street",
+                "city": "Odesa",
+                "postcode": "65000",
+                "phoneNumber": "+380951234567"
+            }
         },
         {
             "id": @integer@,
@@ -30,7 +48,28 @@
             "state": "fulfilled",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
-            "paymentState": "paid"
+            "paymentState": "paid",
+            "shippingAddress": {
+                "firstName": "Joachim",
+                "lastName": "Loevgaard",
+                "countryCode": "DK",
+                "street": "Main street",
+                "city": "Aalborg",
+                "postcode": "123456",
+                "company": "Setono",
+                "phoneNumber": "+4512345678"
+            },
+            "billingAddress": {
+                "firstName": "Joachim",
+                "lastName": "Loevgaard",
+                "countryCode": "DK",
+                "street": "Main street",
+                "city": "Aalborg",
+                "postcode": "123456",
+                "company": "Setono",
+                "phoneNumber": "+4512345678"
+            }
+
         }
     ]
 }
