@@ -6,30 +6,30 @@ namespace Setono\SyliusLagersystemPlugin\View\Order;
 
 class OrderView
 {
-    /** @var int */
+    /** @var int|null */
     public $id;
 
-    /** @var string */
+    /** @var string|null */
     public $number;
 
-    /** @var string */
+    /** @var string|null */
     public $channel;
 
-    /** @var string */
+    /** @var string|null */
     public $currencyCode;
 
-    /** @var string */
+    /** @var string|null */
     public $localeCode;
 
-    /** @var string */
+    /** @var string|null */
     public $state;
 
-    /** @var string */
+    /** @var string|null */
     public $checkoutState;
 
-    /** @var string */
+    /** @var string|null */
     public $checkoutCompletedAt;
 
-    /** @var string */
+    /** @var string|null */
     public $paymentState;
 }

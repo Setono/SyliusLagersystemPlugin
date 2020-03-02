@@ -15,13 +15,13 @@ use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 final class OrderViewRepository implements OrderViewRepositoryInterface
 {
     /** @var OrderRepositoryInterface */
-    protected $orderRepository;
+    private $orderRepository;
 
     /** @var PageViewFactoryInterface */
-    protected $pageViewFactory;
+    private $pageViewFactory;
 
     /** @var OrderViewFactoryInterface */
-    protected $orderViewFactory;
+    private $orderViewFactory;
 
     public function __construct(
         OrderRepositoryInterface $orderRepository,
