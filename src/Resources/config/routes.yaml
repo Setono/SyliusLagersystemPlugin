@@ -6,5 +6,5 @@ setono_sylius_lagersystem_admin_api_order_index:
         _sylius:
             section: admin_api
             serialization_version: $version
-            serialization_groups: [ Default, Detailed, DetailedCart ]
+            serialization_groups: [ Lagersystem ]
             grid: sylius_admin_order
