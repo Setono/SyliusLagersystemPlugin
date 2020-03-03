@@ -74,9 +74,9 @@
     },
     "prefer-stable": true,
     "scripts": {
-        "analyse": "vendor/bin/phpstan analyse -c phpstan.neon -l max --no-progress src/ tests/Controller",
-        "check-style": "vendor/bin/ecs check --no-progress-bar src/ tests/Controller",
-        "fix-style": "vendor/bin/ecs check src/ tests/Controller --fix",
+        "analyse": "vendor/bin/phpstan analyse -c phpstan.neon -l max --no-progress src/ tests/Controller tests/Application/Entity tests/Application/Repository",
+        "check-style": "vendor/bin/ecs check --no-progress-bar src/ tests/Controller tests/Application/Entity tests/Application/Repository",
+        "fix-style": "vendor/bin/ecs check src/ tests/Controller tests/Application/Entity tests/Application/Repository --fix",
         "phpspec": "vendor/bin/phpspec run -vvv",
         "phpunit": "vendor/bin/phpunit",
         "tests": [
