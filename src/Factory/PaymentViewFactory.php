@@ -9,13 +9,13 @@ use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 use Webmozart\Assert\Assert;
 
-final class PaymentViewFactory implements PaymentViewFactoryInterface
+class PaymentViewFactory implements PaymentViewFactoryInterface
 {
     /** @var PaymentMethodViewFactoryInterface */
-    private $paymentMethodViewFactory;
+    protected $paymentMethodViewFactory;
 
     /** @var string */
-    private $paymentViewClass;
+    protected $paymentViewClass;
 
     public function __construct(
         PaymentMethodViewFactoryInterface $paymentMethodViewFactory,

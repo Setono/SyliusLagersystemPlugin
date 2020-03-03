@@ -7,10 +7,10 @@ namespace Setono\SyliusLagersystemPlugin\Factory;
 use Setono\SyliusLagersystemPlugin\View\PaymentMethodView;
 use Sylius\Component\Core\Model\PaymentMethodInterface;
 
-final class PaymentMethodViewFactory implements PaymentMethodViewFactoryInterface
+class PaymentMethodViewFactory implements PaymentMethodViewFactoryInterface
 {
     /** @var string */
-    private $paymentMethodViewClass;
+    protected $paymentMethodViewClass;
 
     public function __construct(string $paymentMethodViewClass)
     {

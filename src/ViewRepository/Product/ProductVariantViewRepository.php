@@ -13,16 +13,16 @@ use Setono\SyliusLagersystemPlugin\Repository\ProductVariantRepositoryInterface;
 use Setono\SyliusLagersystemPlugin\View\PageView;
 use Webmozart\Assert\Assert;
 
-final class ProductVariantViewRepository implements ProductVariantViewRepositoryInterface
+class ProductVariantViewRepository implements ProductVariantViewRepositoryInterface
 {
     /** @var ProductVariantRepositoryInterface */
-    private $productVariantRepository;
+    protected $productVariantRepository;
 
     /** @var PageViewFactoryInterface */
-    private $pageViewFactory;
+    protected $pageViewFactory;
 
     /** @var ProductVariantViewFactoryInterface */
-    private $productVariantViewFactory;
+    protected $productVariantViewFactory;
 
     public function __construct(
         ProductVariantRepositoryInterface $productVariantRepository,

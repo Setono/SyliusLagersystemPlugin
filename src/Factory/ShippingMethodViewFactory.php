@@ -8,10 +8,10 @@ use Setono\SyliusLagersystemPlugin\View\ShippingMethodView;
 use Sylius\Component\Core\Model\ShipmentInterface;
 use Webmozart\Assert\Assert;
 
-final class ShippingMethodViewFactory implements ShippingMethodViewFactoryInterface
+class ShippingMethodViewFactory implements ShippingMethodViewFactoryInterface
 {
     /** @var string */
-    private $shippingMethodViewClass;
+    protected $shippingMethodViewClass;
 
     public function __construct(
         string $shippingMethodViewClass

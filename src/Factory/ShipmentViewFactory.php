@@ -8,13 +8,13 @@ use Setono\SyliusLagersystemPlugin\View\ShipmentView;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\ShipmentInterface;
 
-final class ShipmentViewFactory implements ShipmentViewFactoryInterface
+class ShipmentViewFactory implements ShipmentViewFactoryInterface
 {
     /** @var ShippingMethodViewFactoryInterface */
-    private $shippingMethodViewFactory;
+    protected $shippingMethodViewFactory;
 
     /** @var string */
-    private $shipmentViewClass;
+    protected $shipmentViewClass;
 
     public function __construct(
         ShippingMethodViewFactoryInterface $shippingMethodViewFactory,

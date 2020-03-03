@@ -7,10 +7,10 @@ namespace Setono\SyliusLagersystemPlugin\Factory\Customer;
 use Setono\SyliusLagersystemPlugin\View\Customer\CustomerView;
 use Sylius\Component\Core\Model\CustomerInterface;
 
-final class CustomerViewFactory implements CustomerViewFactoryInterface
+class CustomerViewFactory implements CustomerViewFactoryInterface
 {
     /** @var string */
-    private $customerViewClass;
+    protected $customerViewClass;
 
     public function __construct(string $customerViewClass)
     {

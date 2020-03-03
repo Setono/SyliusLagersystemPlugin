@@ -12,16 +12,16 @@ use Setono\SyliusLagersystemPlugin\Model\PaginatorDetails;
 use Setono\SyliusLagersystemPlugin\Repository\OrderRepositoryInterface;
 use Setono\SyliusLagersystemPlugin\View\PageView;
 
-final class OrderViewRepository implements OrderViewRepositoryInterface
+class OrderViewRepository implements OrderViewRepositoryInterface
 {
     /** @var OrderRepositoryInterface */
-    private $orderRepository;
+    protected $orderRepository;
 
     /** @var PageViewFactoryInterface */
-    private $pageViewFactory;
+    protected $pageViewFactory;
 
     /** @var OrderViewFactoryInterface */
-    private $orderViewFactory;
+    protected $orderViewFactory;
 
     public function __construct(
         OrderRepositoryInterface $orderRepository,
