@@ -18,5 +18,12 @@
             <argument type="service" id="setono_sylius_lagersystem.view_repository.product_variant_view_repository" />
         </service>
 
+        <service id="setono_sylius_lagersystem.controller.product.product_variant_show_action"
+                 class="Setono\SyliusLagersystemPlugin\Controller\Product\ProductVariantShowAction">
+            <argument type="service" id="fos_rest.view_handler" />
+            <argument type="service" id="setono_sylius_lagersystem.factory.product_variant_view_factory" />
+            <argument type="service" id="sylius.repository.product_variant" />
+        </service>
+
     </services>
 </container>

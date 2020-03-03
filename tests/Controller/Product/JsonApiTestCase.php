@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tests\Setono\SyliusLagersystemPlugin\Controller\Product;
 
 use function Safe\sprintf;
+use Sylius\Component\Core\Model\ProductVariantInterface;
+use Tests\Setono\SyliusLagersystemPlugin\Application\Entity\ProductVariant;
 use Tests\Setono\SyliusLagersystemPlugin\Controller\JsonApiTestCase as BaseJsonApiTestCase;
 
 abstract class JsonApiTestCase extends BaseJsonApiTestCase
@@ -30,5 +32,24 @@ abstract class JsonApiTestCase extends BaseJsonApiTestCase
         }
 
         return '/api/lagersystem/product-variants';
+    }
+
+    /**
+     * @param ProductVariant|string $variant
+     */
+    protected function getProductVariantShowUrl($variant, ?string $localeCode = null): string
+    {
+        if (null !== $localeCode) {
+            return sprintf(
+                '/api/lagersystem/product-variants/%s?locale=%s',
+                $variant instanceof ProductVariantInterface ? $variant->getCode() : $variant,
+                $localeCode
+            );
+        }
+
+        return sprintf(
+            '/api/lagersystem/product-variants/%s',
+            $variant instanceof ProductVariantInterface ? $variant->getCode() : $variant
+        );
     }
 }

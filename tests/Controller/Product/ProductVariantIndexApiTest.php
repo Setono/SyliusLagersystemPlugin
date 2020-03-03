@@ -14,7 +14,7 @@ final class ProductVariantIndexApiTest extends JsonApiTestCase
     public function it_returns_an_unauthorized_exception_if_no_auth_headers_sent(): void
     {
         $this->loadDefaultFixtureFiles();
-        $this->client->request('GET', $this->getProductVariantsIndexUrl(), [], [], self::$acceptHeader);
+        $this->client->request('GET', $this->getProductVariantsIndexUrl('en_US'), [], [], self::$acceptHeader);
         $response = $this->client->getResponse();
         $this->assertResponseCode($response, Response::HTTP_UNAUTHORIZED);
     }

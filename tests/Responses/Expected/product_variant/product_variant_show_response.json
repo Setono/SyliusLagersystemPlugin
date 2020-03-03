@@ -1,0 +1,14 @@
+{
+    "id": @integer@,
+    "code": "red-mug",
+    "name": "Red Mug",
+    "brand": {
+        "id": @integer@,
+        "code": "setono",
+        "name": "Setono"
+    },
+    "barcode": "7891000074237",
+    "weight": 125,
+    "onHand": 0,
+    "images": []
+}

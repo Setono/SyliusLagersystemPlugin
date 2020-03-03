@@ -45,7 +45,7 @@ class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
         $variantView->weight = $weight;
         $variantView->onHand = $variant->getOnHand();
 
-        /** @var ProductInterface|BrandAwareInterface $product */
+        /** @var ProductInterface|BrandAwareInterface|null $product */
         $product = $variant->getProduct();
         Assert::notNull($product);
 
