@@ -45,6 +45,7 @@ final class Configuration implements ConfigurationInterface
                         ->scalarNode('payment')->defaultValue(View\PaymentView::class)->end()
                         ->scalarNode('order')->defaultValue(View\Order\OrderView::class)->end()
                         ->scalarNode('product_variant')->defaultValue(View\Product\ProductVariantView::class)->end()
+                        ->scalarNode('brand')->defaultValue(View\Loevgaard\BrandView::class)->end()
                     ->end()
                 ->end()
             ->end()

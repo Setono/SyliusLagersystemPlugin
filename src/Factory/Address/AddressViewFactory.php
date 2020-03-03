@@ -7,10 +7,10 @@ namespace Setono\SyliusLagersystemPlugin\Factory\Address;
 use Setono\SyliusLagersystemPlugin\View\AddressView;
 use Sylius\Component\Core\Model\AddressInterface;
 
-final class AddressViewFactory implements AddressViewFactoryInterface
+class AddressViewFactory implements AddressViewFactoryInterface
 {
     /** @var string */
-    private $addressViewClass;
+    protected $addressViewClass;
 
     public function __construct(string $addressViewClass)
     {

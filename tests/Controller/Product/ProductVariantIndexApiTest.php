@@ -33,7 +33,7 @@ final class ProductVariantIndexApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function index_returns_all_completed_orders(): void
+    public function index_returns_all_variants(): void
     {
         $this->loadDefaultFixtureFiles();
         $this->client->request('GET', $this->getProductVariantsIndexUrl('en_US'), [], [], self::$authorizedHeaderWithAccept);

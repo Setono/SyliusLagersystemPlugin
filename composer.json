@@ -27,6 +27,8 @@
         "korbeil/phpstan-generic-rules": "^0.2.4",
         "lakion/mink-debug-extension": "^1.2.3",
         "lchrusciel/api-test-case": "^4.0",
+        "loevgaard/sylius-barcode-plugin": "^1.4",
+        "loevgaard/sylius-brand-plugin": "^2.0",
         "matthiasnoback/symfony-config-test": "^4.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.0",
         "phpspec/phpspec": "^6.1",
@@ -44,6 +46,10 @@
         "symfony/web-profiler-bundle": "^4.3 || ^5.0",
         "symfony/web-server-bundle": "^4.3 || ^5.0",
         "thecodingmachine/phpstan-safe-rule": "^1.0"
+    },
+    "suggest": {
+        "loevgaard/sylius-barcode-plugin": "To render barcode at product variant endpoint",
+        "loevgaard/sylius-brand-plugin": "To render brand at product variant endpoint"
     },
     "config": {
         "sort-packages": true

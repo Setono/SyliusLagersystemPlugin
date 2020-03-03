@@ -1,5 +1,11 @@
-Sylius\Component\Core\Model\Product:
+Loevgaard\SyliusBrandPlugin\Model\Brand:
+    brand_setono:
+        code: "setono"
+        name: "Setono"
+
+Tests\Setono\SyliusLagersystemPlugin\Application\Entity\Product:
     product_mug:
+        brand: "@brand_setono"
         code: "mug"
         createdAt: "<(new DateTime())>"
         channels: ["@channel_us_web"]
@@ -16,20 +22,31 @@ Sylius\Component\Core\Model\ProductTranslation:
         description: "Mug description"
         translatable: "@product_mug"
 
-Sylius\Component\Core\Model\ProductVariant:
+Tests\Setono\SyliusLagersystemPlugin\Application\Entity\ProductVariant:
     mug_variant_red:
         code: "red-mug"
+        weight: 0.125
+        barcode: "7891000074237"
         product: "@product_mug"
         currentLocale: "en_GB"
         translations: ["@mug_variant_red_translation_en_us"]
         channelPricings:
             US_WEB: "@channel_pricing_mug_us_web"
+    mug_variant_green:
+        code: "green-mug"
+        product: "@product_mug"
+        currentLocale: "en_GB"
+        translations: ["@mug_variant_green_translation_en_us"]
 
 Sylius\Component\Product\Model\ProductVariantTranslation:
     mug_variant_red_translation_en_us:
         locale: "en_US"
         name: "Red Mug"
         translatable: "@mug_variant_red"
+    mug_variant_green_translation_en_us:
+        locale: "en_US"
+        name: "Green Mug"
+        translatable: "@mug_variant_green"
 
 Sylius\Component\Core\Model\ChannelPricing:
     channel_pricing_mug_us_web:

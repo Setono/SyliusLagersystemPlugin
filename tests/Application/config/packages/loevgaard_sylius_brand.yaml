@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@LoevgaardSyliusBrandPlugin/Resources/config/app/config.yaml" }

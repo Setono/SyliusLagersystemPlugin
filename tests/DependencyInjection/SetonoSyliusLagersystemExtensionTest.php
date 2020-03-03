@@ -28,6 +28,7 @@ final class SetonoSyliusLagersystemExtensionTest extends AbstractExtensionTestCa
             'payment' => View\PaymentView::class,
             'order' => View\Order\OrderView::class,
             'product_variant' => View\Product\ProductVariantView::class,
+            'brand' => View\Loevgaard\BrandView::class,
         ];
 
         foreach ($nameToClass as $name => $class) {

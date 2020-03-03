@@ -31,6 +31,7 @@ final class ConfigurationTest extends TestCase
                 'payment' => View\PaymentView::class,
                 'order' => View\Order\OrderView::class,
                 'product_variant' => View\Product\ProductVariantView::class,
+                'brand' => View\Loevgaard\BrandView::class,
             ],
         ], 'view_classes');
     }

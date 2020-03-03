@@ -2,7 +2,7 @@
     "page": 1,
     "limit": 10,
     "pages": 1,
-    "total": 1,
+    "total": 2,
     "links": {
         "self": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10",
         "first": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10",
@@ -14,9 +14,27 @@
             "id": @integer@,
             "code": "red-mug",
             "name": "Red Mug",
-            "weight": 0,
+            "brand": {
+                "id": @integer@,
+                "code": "setono",
+                "name": "Setono"
+            },
+            "barcode": "7891000074237",
+            "weight": 125,
             "onHand": 0,
             "images": []
-        }
+        },
+        {
+            "id": @integer@,
+            "code": "green-mug",
+            "name": "Green Mug",
+            "brand": {
+                "id": @integer@,
+                "code": "setono",
+                "name": "Setono"
+            },
+            "onHand": 0,
+            "images": []
+         }
     ]
 }
