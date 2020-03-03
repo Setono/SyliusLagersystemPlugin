@@ -22,7 +22,7 @@ final class OrderIndexApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function index_returns_all_completed_orders(): void
+    public function index_returns_only_open_orders_in_lagersystem_terms(): void
     {
         $this->loadDefaultFixtureFiles();
         $this->client->request('GET', $this->getOrdersIndexUrl(), [], [], self::$authorizedHeaderWithAccept);
