@@ -51,5 +51,10 @@
             <argument type="string">%setono_sylius_lagersystem.view.order.class%</argument>
         </service>
 
+        <service id="setono_sylius_lagersystem.factory.product_variant_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\Product\ProductVariantViewFactory">
+            <argument type="string">%setono_sylius_lagersystem.view.product_variant.class%</argument>
+        </service>
+
     </services>
 </container>

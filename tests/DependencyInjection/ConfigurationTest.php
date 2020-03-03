@@ -30,6 +30,7 @@ final class ConfigurationTest extends TestCase
                 'payment_method' => View\PaymentMethodView::class,
                 'payment' => View\PaymentView::class,
                 'order' => View\Order\OrderView::class,
+                'product_variant' => View\Product\ProductVariantView::class,
             ],
         ], 'view_classes');
     }

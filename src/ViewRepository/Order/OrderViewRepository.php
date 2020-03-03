@@ -36,8 +36,8 @@ final class OrderViewRepository implements OrderViewRepositoryInterface
     public function getAllPaginated(PaginatorDetails $paginatorDetails): PageView
     {
         $queryBuilder = $this->orderRepository->createListQueryBuilder();
-        $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($queryBuilder));
 
+        $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($queryBuilder));
         $pagerfanta->setMaxPerPage($paginatorDetails->limit());
         $pagerfanta->setCurrentPage($paginatorDetails->page());
 
