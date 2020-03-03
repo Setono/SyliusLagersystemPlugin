@@ -41,6 +41,9 @@ class OrderView
     /** @var array|PaymentView[] */
     public $payments = [];
 
+    /** @var string|null */
+    public $shippingState;
+
     /** @var array|ShipmentView[] */
     public $shipments = [];
 

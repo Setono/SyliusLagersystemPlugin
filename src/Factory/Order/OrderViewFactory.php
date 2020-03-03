@@ -74,6 +74,7 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $orderView->state = $order->getState();
         $orderView->checkoutState = $order->getCheckoutState();
         $orderView->checkoutCompletedAt = $checkoutCompletedAt->format('c');
+        $orderView->shippingState = $order->getShippingState();
         $orderView->paymentState = $order->getPaymentState();
 
         /** @var ShipmentInterface $shipment */

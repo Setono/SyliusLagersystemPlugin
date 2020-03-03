@@ -30,7 +30,7 @@ Sylius\Component\Core\Model\OrderItem:
 
 Sylius\Component\Core\Model\Order:
     order_1:
-        number: 000000001
+        number: "000000001"
         customer: "@customer_igor"
         channel: "@channel_us_web"
         currencyCode: USD
@@ -40,7 +40,7 @@ Sylius\Component\Core\Model\Order:
         checkoutCompletedAt: "<(new DateTime())>"
         payments:
             - "@payment_1"
-        paymentState: awaiting_payment
+        paymentState: authorized
         shipments:
             - "@shipment_1"
         shippingState: ready
@@ -52,7 +52,7 @@ Sylius\Component\Core\Model\Order:
         createdAt: "<(new DateTime())>"
 
     order_2:
-        number: 000000002
+        number: "000000002"
         customer: "@customer_igor"
         channel: "@channel_us_web"
         currencyCode: USD
@@ -65,18 +65,39 @@ Sylius\Component\Core\Model\Order:
         paymentState: paid
         shipments:
             - "@shipment_2"
-        shippingState: shipped
+        shippingState: partially_shipped
         shippingAddress: "@customer_igor_work_address"
         billingAddress: "@customer_igor_work_address"
 
+    order_3_new:
+        number: "000000003"
+        customer: "@customer_igor"
+        channel: "@channel_us_web"
+        currencyCode: USD
+        localeCode: en_US
+        state: new
+        checkoutState: new
+        checkoutCompletedAt: "<(new DateTime())>"
+        payments:
+            - "@payment_3"
+        paymentState: new
+        shipments:
+            - "@shipment_3"
+        shippingState: ready
+
 Sylius\Component\Core\Model\Payment:
     payment_1:
-        state: new
+        state: authorized
         method: "@cash_on_delivery"
         amount: 100
         currencyCode: USD
     payment_2:
-        state: paid
+        state: completed
+        method: "@cash_on_delivery"
+        amount: 100
+        currencyCode: USD
+    payment_3:
+        state: new
         method: "@cash_on_delivery"
         amount: 100
         currencyCode: USD
@@ -86,5 +107,8 @@ Sylius\Component\Core\Model\Shipment:
         state: ready
         method: "@shipping_method_ups"
     shipment_2:
-        state: shipped
+        state: partially_shipped
+        method: "@shipping_method_ups"
+    shipment_3:
+        state: ready
         method: "@shipping_method_ups"

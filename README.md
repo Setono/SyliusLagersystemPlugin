@@ -52,6 +52,13 @@ imports:
     - { resource: "@SetonoSyliusLagersystemPlugin/Resources/config/app/config.yaml" }    
 ````
 
+### Step 3: Override repositories
+
+Like it was done at:
+
+- [tests/Application/Repository](tests/Application/Repository)
+- [tests/Application/config/packages/_sylius.yaml](tests/Application/config/packages/_sylius.yaml)
+
 [ico-version]: https://poser.pugx.org/setono/sylius-lagersystem-plugin/v/stable
 [ico-unstable-version]: https://poser.pugx.org/setono/sylius-lagersystem-plugin/v/unstable
 [ico-license]: https://poser.pugx.org/setono/sylius-lagersystem-plugin/license

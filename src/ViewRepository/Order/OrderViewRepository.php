@@ -9,8 +9,8 @@ use Pagerfanta\Pagerfanta;
 use Setono\SyliusLagersystemPlugin\Factory\Order\OrderViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\Factory\PageViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\Model\PaginatorDetails;
+use Setono\SyliusLagersystemPlugin\Repository\OrderRepositoryInterface;
 use Setono\SyliusLagersystemPlugin\View\PageView;
-use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 
 final class OrderViewRepository implements OrderViewRepositoryInterface
 {
@@ -35,7 +35,7 @@ final class OrderViewRepository implements OrderViewRepositoryInterface
 
     public function getAllPaginated(PaginatorDetails $paginatorDetails): PageView
     {
-        $queryBuilder = $this->orderRepository->createListQueryBuilder();
+        $queryBuilder = $this->orderRepository->createLagersystemListQueryBuilder();
 
         $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($queryBuilder));
         $pagerfanta->setMaxPerPage($paginatorDetails->limit());

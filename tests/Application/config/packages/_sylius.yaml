@@ -18,3 +18,9 @@ sylius_product:
         product_variant:
             classes:
                 repository: Tests\Setono\SyliusLagersystemPlugin\Application\Repository\ProductVariantRepository
+
+sylius_order:
+    resources:
+        order:
+            classes:
+                repository: Tests\Setono\SyliusLagersystemPlugin\Application\Repository\OrderRepository

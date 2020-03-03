@@ -12,17 +12,18 @@
     "items": [
         {
             "id": @integer@,
-            "number": "1",
+            "number": "000000001",
             "channel": "US_WEB",
             "currencyCode": "USD",
             "localeCode": "en_US",
             "state": "new",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
-            "paymentState": "awaiting_payment",
+            "shippingState": "ready",
+            "paymentState": "authorized",
             "payments": [
                 {
-                    "state": "new",
+                    "state": "authorized",
                     "method": {
                         "code": "cash_on_delivery",
                         "name": "Cash on delivery",
@@ -71,17 +72,18 @@
         },
         {
             "id": @integer@,
-            "number": "2",
+            "number": "000000002",
             "channel": "US_WEB",
             "currencyCode": "USD",
             "localeCode": "en_US",
             "state": "fulfilled",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
+            "shippingState": "partially_shipped",
             "paymentState": "paid",
             "payments": [
                 {
-                    "state": "paid",
+                    "state": "completed",
                     "method": {
                         "code": "cash_on_delivery",
                         "name": "Cash on delivery",
@@ -91,7 +93,7 @@
             ],
             "shipments": [
                 {
-                    "state": "shipped",
+                    "state": "partially_shipped",
                     "method": {
                         "code": "UPS",
                         "name": "UPS",
