@@ -102,13 +102,16 @@
             ],
             "adjustments": {
                 "UPS": {
-                    "amount": 500
+                    "amount": 500,
+                    "neutral": false
                 },
                 "TAX_EU": {
-                    "amount": 399
+                    "amount": 399,
+                    "neutral": true
                 },
                 "PROMO_UNIT_X": {
-                    "amount": -198
+                    "amount": -198,
+                    "neutral": false
                 }
             },
             "total": 6299,

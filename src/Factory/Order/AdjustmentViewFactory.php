@@ -23,6 +23,7 @@ class AdjustmentViewFactory implements AdjustmentViewFactoryInterface
         $adjustmentView = new $this->adjustmentViewClass();
         $adjustmentView->name = $adjustment->getLabel();
         $adjustmentView->amount = $adjustment->getAmount() + $additionalAmount;
+        $adjustmentView->neutral = $adjustment->isNeutral();
 
         return $adjustmentView;
     }

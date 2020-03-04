@@ -11,4 +11,7 @@ class AdjustmentView
 
     /** @var int|null */
     public $amount;
+
+    /** @var boolean */
+    public $neutral;
 }
