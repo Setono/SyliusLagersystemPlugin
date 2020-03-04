@@ -6,10 +6,10 @@ namespace Setono\SyliusLagersystemPlugin\Factory;
 
 use Setono\SyliusLagersystemPlugin\View\PriceView;
 
-final class PriceViewFactory implements PriceViewFactoryInterface
+class PriceViewFactory implements PriceViewFactoryInterface
 {
     /** @var string */
-    private $priceViewClass;
+    protected $priceViewClass;
 
     public function __construct(string $priceViewClass)
     {

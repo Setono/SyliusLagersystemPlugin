@@ -54,6 +54,7 @@
             <argument type="service" id="setono_sylius_lagersystem.factory.shipment_view_factory"/>
             <argument type="service" id="setono_sylius_lagersystem.factory.payment_view_factory"/>
             <argument type="service" id="setono_sylius_lagersystem.factory.adjustment_view_factory"/>
+            <argument type="service" id="setono_sylius_lagersystem.factory.item_view_factory"/>
             <argument type="string">%setono_sylius_lagersystem.view.order.class%</argument>
         </service>
 
@@ -61,6 +62,18 @@
                  class="Setono\SyliusLagersystemPlugin\Factory\Order\AdjustmentViewFactory">
             <argument type="service" id="setono_sylius_lagersystem.factory.price_view_factory"/>
             <argument type="string">%setono_sylius_lagersystem.view.adjustment.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.item_unit_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\Order\ItemUnitViewFactory">
+            <argument type="string">%setono_sylius_lagersystem.view.order_item_unit.class%</argument>
+        </service>
+
+        <service id="setono_sylius_lagersystem.factory.item_view_factory"
+                 class="Setono\SyliusLagersystemPlugin\Factory\Order\ItemViewFactory">
+            <argument type="service" id="setono_sylius_lagersystem.factory.product_variant_view_factory"/>
+            <argument type="service" id="setono_sylius_lagersystem.factory.item_unit_view_factory"/>
+            <argument type="string">%setono_sylius_lagersystem.view.order_item.class%</argument>
         </service>
 
         <service id="setono_sylius_lagersystem.factory.product_variant_view_factory"

@@ -12,6 +12,7 @@ use Setono\SyliusLagersystemPlugin\View\Order\OrderView;
 use Sylius\Component\Core\Model\AdjustmentInterface;
 use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\OrderInterface;
+use Sylius\Component\Core\Model\OrderItemInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
 use Sylius\Component\Core\Model\ShipmentInterface;
 use Webmozart\Assert\Assert;
@@ -33,6 +34,9 @@ class OrderViewFactory implements OrderViewFactoryInterface
     /** @var AdjustmentViewFactoryInterface */
     protected $adjustmentViewFactory;
 
+    /** @var ItemViewFactoryInterface */
+    protected $itemFactory;
+
     /** @var string */
     protected $orderViewClass;
 
@@ -42,6 +46,7 @@ class OrderViewFactory implements OrderViewFactoryInterface
         ShipmentViewFactoryInterface $shipmentViewFactory,
         PaymentViewFactoryInterface $paymentViewFactory,
         AdjustmentViewFactoryInterface $adjustmentViewFactory,
+        ItemViewFactoryInterface $itemFactory,
         string $orderViewClass
     ) {
         $this->customerViewFactory = $customerViewFactory;
@@ -49,6 +54,7 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $this->shipmentViewFactory = $shipmentViewFactory;
         $this->paymentViewFactory = $paymentViewFactory;
         $this->adjustmentViewFactory = $adjustmentViewFactory;
+        $this->itemFactory = $itemFactory;
         $this->orderViewClass = $orderViewClass;
     }
 
@@ -82,6 +88,14 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $orderView->checkoutCompletedAt = $checkoutCompletedAt->format('c');
         $orderView->shippingState = $order->getShippingState();
         $orderView->paymentState = $order->getPaymentState();
+
+        /** @var OrderItemInterface $item */
+        foreach ($order->getItems() as $item) {
+            $orderView->items[] = $this->itemFactory->create(
+                $item,
+                $localeCode
+            );
+        }
 
         /** @var ShipmentInterface $shipment */
         foreach ($order->getShipments() as $shipment) {

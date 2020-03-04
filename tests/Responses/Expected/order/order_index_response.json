@@ -19,7 +19,6 @@
             "state": "new",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
-            "shippingState": "ready",
             "paymentState": "authorized",
             "payments": [
                 {
@@ -31,6 +30,7 @@
                     }
                 }
             ],
+            "shippingState": "ready",
             "shipments": [
                 {
                     "state": "ready",
@@ -59,6 +59,44 @@
                 "postcode": "65000",
                 "phoneNumber": "380951234567"
             },
+            "items": [
+                {
+                    "id": @integer@,
+                    "quantity": 3,
+                    "total": 5799,
+                    "variant": {
+                        "id": @integer@,
+                        "code": "red-mug",
+                        "name": "Red Mug",
+                        "brand": {
+                            "id": @integer@,
+                            "code": "setono",
+                            "name": "Setono"
+                        },
+                        "barcode": "7891000074237",
+                        "weight": 125,
+                        "onHand": 7,
+                        "images": [
+                            {
+                                "type": "thumbnail",
+                                "path": "/pants.jpeg",
+                                "cachedPath": "http://localhost/media/cache/setono_sylius_lagersystem/pants.jpeg"
+                            }
+                        ]
+                    },
+                    "units": [
+                        {
+                            "total": 1999
+                        },
+                        {
+                            "total": 1900
+                        },
+                        {
+                            "total": 1900
+                        }
+                    ]
+                 }
+            ],
             "adjustments": {
                 "UPS": {
                     "amount": {
@@ -99,7 +137,6 @@
             "state": "fulfilled",
             "checkoutState": "completed",
             "checkoutCompletedAt": "@string@.isDateTime()",
-            "shippingState": "partially_shipped",
             "paymentState": "paid",
             "payments": [
                 {
@@ -111,6 +148,7 @@
                     }
                 }
             ],
+            "shippingState": "partially_shipped",
             "shipments": [
                 {
                     "state": "partially_shipped",
@@ -141,6 +179,7 @@
                 "company": "Setono",
                 "phoneNumber": "4512345678"
             },
+            "items": [],
             "adjustments": [],
             "total": 0,
             "customer": {

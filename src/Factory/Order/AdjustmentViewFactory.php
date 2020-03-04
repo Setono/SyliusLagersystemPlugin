@@ -8,13 +8,13 @@ use Setono\SyliusLagersystemPlugin\Factory\PriceViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Order\AdjustmentView;
 use Sylius\Component\Order\Model\AdjustmentInterface;
 
-final class AdjustmentViewFactory implements AdjustmentViewFactoryInterface
+class AdjustmentViewFactory implements AdjustmentViewFactoryInterface
 {
     /** @var PriceViewFactoryInterface */
-    private $priceViewFactory;
+    protected $priceViewFactory;
 
     /** @var string */
-    private $adjustmentViewClass;
+    protected $adjustmentViewClass;
 
     public function __construct(PriceViewFactoryInterface $priceViewFactory, string $adjustmentViewClass)
     {
