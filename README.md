@@ -65,6 +65,70 @@ Like it was done at:
 - Lagersystem API returns its weight in grams
 - Not tracked product variant's onHand property is always have 1 at Lagersystem API response
 
+## Requests examples
+
+### Prerequisites
+
+- Install Curl CLI and JQ:
+
+    ```bash
+    # OSX
+    brew install curl
+    brew install jq
+    ```
+- Load default Sylius fixtures suite:
+
+    ```bash
+    (cd tests/Application && bin/console sylius:fixtures:load default -n)
+    ```
+
+- Run local server:
+
+    ```bash
+    (cd tests/Application && symfony server:start --port=8000)
+    ```
+
+### Auth
+
+```bash
+SYLIUS_HOST=http://localhost:8000
+SYLIUS_ADMIN_API_ACCESS_TOKEN=$(curl $SYLIUS_HOST/api/oauth/v2/token \
+    --show-error \
+    -d "client_id"=demo_client \
+    -d "client_secret"=secret_demo_client \
+    -d "grant_type"=password \
+    -d "username"=api@example.com \
+    -d "password"=sylius-api | jq '.access_token' --raw-output)
+echo $SYLIUS_ADMIN_API_ACCESS_TOKEN
+```
+
+### Product variant list endpoint
+
+```bash
+curl "$SYLIUS_HOST/api/lagersystem/product-variants?locale=en_US&limit=3" \
+    -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+```
+
+### Product variant show endpoint
+
+```bash
+SYLIUS_SOME_PRODUCT_VARIANT_CODE=$(curl "$SYLIUS_HOST/api/lagersystem/product-variants?locale=en_US&limit=1" \
+    --show-error \
+    -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN" \
+    -H "Accept: application/json" | jq '.items[0].code' --raw-output)
+echo "Some product code: $SYLIUS_SOME_PRODUCT_VARIANT_CODE"
+
+curl "$SYLIUS_HOST/api/lagersystem/product-variants/$SYLIUS_SOME_PRODUCT_VARIANT_CODE?locale=en_US" \
+    -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+```
+
+### Order list enpoint
+
+```bash
+curl "$SYLIUS_HOST/api/lagersystem/orders?limit=3" \
+    -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
+```
+
 [ico-version]: https://poser.pugx.org/setono/sylius-lagersystem-plugin/v/stable
 [ico-unstable-version]: https://poser.pugx.org/setono/sylius-lagersystem-plugin/v/unstable
 [ico-license]: https://poser.pugx.org/setono/sylius-lagersystem-plugin/license
