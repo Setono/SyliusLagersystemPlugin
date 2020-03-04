@@ -14,11 +14,6 @@
             "id": @integer@,
             "code": "red-mug",
             "name": "Red Mug",
-            "brand": {
-                "id": @integer@,
-                "code": "setono",
-                "name": "Setono"
-            },
             "barcode": "7891000074237",
             "weight": 125,
             "onHand": 7,
@@ -34,11 +29,6 @@
             "id": @integer@,
             "code": "green-mug",
             "name": "Green Mug",
-            "brand": {
-                "id": @integer@,
-                "code": "setono",
-                "name": "Setono"
-            },
             "onHand": 3,
             "images": []
          },
@@ -46,11 +36,6 @@
             "id": @integer@,
             "code": "digital",
             "name": "Digital product",
-            "brand": {
-                "id": @integer@,
-                "code": "setono",
-                "name": "Setono"
-            },
             "onHand": 1,
             "images": []
         }

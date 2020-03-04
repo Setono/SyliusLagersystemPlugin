@@ -15,10 +15,6 @@ sylius_shop:
 
 sylius_product:
     resources:
-        product:
-            classes:
-                model: Tests\Setono\SyliusLagersystemPlugin\Application\Entity\Product
-                repository: Tests\Setono\SyliusLagersystemPlugin\Application\Repository\ProductRepository
         product_variant:
             classes:
                 model: Tests\Setono\SyliusLagersystemPlugin\Application\Entity\ProductVariant

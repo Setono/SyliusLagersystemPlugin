@@ -72,14 +72,8 @@
 
         <service id="setono_sylius_lagersystem.factory.product_variant_view_factory"
                  class="Setono\SyliusLagersystemPlugin\Factory\Product\ProductVariantViewFactory">
-            <argument type="service" id="setono_sylius_lagersystem.factory.brand_view_factory"/>
             <argument type="service" id="setono_sylius_lagersystem.factory.image_view_factory"/>
             <argument type="string">%setono_sylius_lagersystem.view.product_variant.class%</argument>
-        </service>
-
-        <service id="setono_sylius_lagersystem.factory.brand_view_factory"
-                 class="Setono\SyliusLagersystemPlugin\Factory\Loevgaard\BrandViewFactory">
-            <argument type="string">%setono_sylius_lagersystem.view.brand.class%</argument>
         </service>
 
         <service id="setono_sylius_lagersystem.factory.image_view_factory"

@@ -49,7 +49,6 @@ final class Configuration implements ConfigurationInterface
                         ->scalarNode('order_item')->defaultValue(View\Order\ItemView::class)->end()
                         ->scalarNode('order_item_unit')->defaultValue(View\Order\ItemUnitView::class)->end()
                         ->scalarNode('product_variant')->defaultValue(View\Product\ProductVariantView::class)->end()
-                        ->scalarNode('brand')->defaultValue(View\Loevgaard\BrandView::class)->end()
                     ->end()
                 ->end()
             ->end()

@@ -1,11 +1,5 @@
-Loevgaard\SyliusBrandPlugin\Model\Brand:
-    brand_setono:
-        code: "setono"
-        name: "Setono"
-
-Tests\Setono\SyliusLagersystemPlugin\Application\Entity\Product:
+Sylius\Component\Core\Model\Product:
     product_mug:
-        brand: "@brand_setono"
         code: "mug"
         createdAt: "<(new DateTime())>"
         channels: ["@channel_us_web"]
@@ -15,7 +9,6 @@ Tests\Setono\SyliusLagersystemPlugin\Application\Entity\Product:
         productTaxons: ["@product_taxon_mug"]
         images: ["@product_mug_thumbnail", "@mug_variant_red_thumbnail"]
     product_digital:
-        brand: "@brand_setono"
         code: "digital"
         createdAt: "<(new DateTime())>"
         channels: ["@channel_us_web"]

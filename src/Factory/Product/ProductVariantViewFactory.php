@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Setono\SyliusLagersystemPlugin\Factory\Product;
 
 use Loevgaard\SyliusBarcodePlugin\Model\BarcodeAwareInterface;
-use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
 use Setono\SyliusLagersystemPlugin\Factory\Image\ImageViewFactoryInterface;
-use Setono\SyliusLagersystemPlugin\Factory\Loevgaard\BrandViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Product\ProductVariantView;
 use Sylius\Component\Core\Model\ProductImageInterface;
 use Sylius\Component\Core\Model\ProductInterface;
@@ -16,9 +14,6 @@ use Webmozart\Assert\Assert;
 
 class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
 {
-    /** @var BrandViewFactoryInterface */
-    protected $brandViewFactory;
-
     /** @var ImageViewFactoryInterface */
     protected $imageViewFactory;
 
@@ -26,11 +21,9 @@ class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
     protected $productVariantViewClass;
 
     public function __construct(
-        BrandViewFactoryInterface $brandViewFactory,
         ImageViewFactoryInterface $imageViewFactory,
         string $productVariantViewClass
     ) {
-        $this->brandViewFactory = $brandViewFactory;
         $this->imageViewFactory = $imageViewFactory;
         $this->productVariantViewClass = $productVariantViewClass;
     }
@@ -61,13 +54,6 @@ class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
         /** @var ProductInterface|null $product */
         $product = $variant->getProduct();
         Assert::notNull($product);
-
-        if ($product instanceof BrandAwareInterface) {
-            $brand = $product->getBrand();
-            if (null !== $brand) {
-                $variantView->brand = $this->brandViewFactory->create($brand);
-            }
-        }
 
         if ($variant instanceof BarcodeAwareInterface) {
             $variantView->barcode = $variant->getBarcode();
