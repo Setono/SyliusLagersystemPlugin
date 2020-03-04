@@ -34,6 +34,13 @@ return [
 
 ```
 
+#### (optional) Install additional plugins
+
+To render barcode and brand for product variants at endpoints, install next plugins:
+
+* https://github.com/loevgaard/SyliusBrandPlugin
+* https://github.com/loevgaard/SyliusBarcodePlugin
+
 ### Step 2: Import routing and configs
 
 #### Import routing
