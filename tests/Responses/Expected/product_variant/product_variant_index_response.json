@@ -2,7 +2,7 @@
     "page": 1,
     "limit": 10,
     "pages": 1,
-    "total": 2,
+    "total": 3,
     "links": {
         "self": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10",
         "first": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10",
@@ -21,7 +21,7 @@
             },
             "barcode": "7891000074237",
             "weight": 125,
-            "onHand": 0,
+            "onHand": 7,
             "images": []
         },
         {
@@ -33,8 +33,21 @@
                 "code": "setono",
                 "name": "Setono"
             },
-            "onHand": 0,
+            "onHand": 3,
             "images": []
-         }
+         },
+        {
+            "id": @integer@,
+            "code": "digital",
+            "name": "Digital product",
+            "brand": {
+                "id": @integer@,
+                "code": "setono",
+                "name": "Setono"
+            },
+            "onHand": 1,
+            "images": []
+        }
+
     ]
 }

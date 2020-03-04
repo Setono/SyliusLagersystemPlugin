@@ -37,13 +37,19 @@ class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
             $weight = (int) ceil(1000 * $variant->getShippingWeight());
         }
 
+        if ($variant->isTracked()) {
+            $onHand = $variant->getOnHand();
+        } else {
+            $onHand = 1;
+        }
+
         /** @var ProductVariantView $variantView */
         $variantView = new $this->productVariantViewClass();
         $variantView->id = $variant->getId();
         $variantView->code = $variant->getCode();
         $variantView->name = $translation->getName();
         $variantView->weight = $weight;
-        $variantView->onHand = $variant->getOnHand();
+        $variantView->onHand = $onHand;
 
         /** @var ProductInterface|BrandAwareInterface|null $product */
         $product = $variant->getProduct();
