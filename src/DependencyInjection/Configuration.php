@@ -44,7 +44,6 @@ final class Configuration implements ConfigurationInterface
                         ->scalarNode('shipment')->defaultValue(View\ShipmentView::class)->end()
                         ->scalarNode('payment_method')->defaultValue(View\PaymentMethodView::class)->end()
                         ->scalarNode('payment')->defaultValue(View\PaymentView::class)->end()
-                        ->scalarNode('price')->defaultValue(View\PriceView::class)->end()
                         ->scalarNode('adjustment')->defaultValue(View\Order\AdjustmentView::class)->end()
                         ->scalarNode('order')->defaultValue(View\Order\OrderView::class)->end()
                         ->scalarNode('order_item')->defaultValue(View\Order\ItemView::class)->end()

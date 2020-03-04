@@ -9,5 +9,5 @@ use Sylius\Component\Order\Model\AdjustmentInterface;
 
 interface AdjustmentViewFactoryInterface
 {
-    public function create(AdjustmentInterface $adjustment, int $additionalAmount, string $currency): AdjustmentView;
+    public function create(AdjustmentInterface $adjustment, int $additionalAmount): AdjustmentView;
 }

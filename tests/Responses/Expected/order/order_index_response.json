@@ -86,38 +86,33 @@
                     },
                     "units": [
                         {
-                            "total": 1999
+                            "total": 1999,
+                            "adjustmentsTotal": 0
                         },
                         {
-                            "total": 1900
+                            "total": 1900,
+                            "adjustmentsTotal": -99
                         },
                         {
-                            "total": 1900
+                            "total": 1900,
+                            "adjustmentsTotal": -99
                         }
                     ]
                  }
             ],
             "adjustments": {
                 "UPS": {
-                    "amount": {
-                        "current": 500,
-                        "currency": "USD"
-                    }
+                    "amount": 500
                 },
                 "TAX_EU": {
-                    "amount": {
-                        "current": 399,
-                        "currency": "USD"
-                    }
+                    "amount": 399
                 },
                 "PROMO_UNIT_X": {
-                    "amount": {
-                        "current": -198,
-                        "currency": "USD"
-                    }
+                    "amount": -198
                 }
             },
             "total": 6299,
+            "adjustmentsTotal": 302,
             "customer": {
                 "id": @integer@,
                 "firstName": "Igor",
@@ -182,6 +177,7 @@
             "items": [],
             "adjustments": [],
             "total": 0,
+            "adjustmentsTotal": 0,
             "customer": {
                 "id": @integer@,
                 "firstName": "Igor",

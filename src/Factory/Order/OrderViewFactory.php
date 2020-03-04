@@ -119,11 +119,15 @@ class OrderViewFactory implements OrderViewFactoryInterface
         /** @var AdjustmentInterface $adjustment */
         foreach ($order->getAdjustmentsRecursively() as $adjustment) {
             $originCode = $adjustment->getOriginCode();
-            $additionalAmount = isset($adjustments[$originCode]) ? $adjustments[$originCode]->amount->current : 0;
+            $additionalAmount = isset($adjustments[$originCode]) ? $adjustments[$originCode]->amount : 0;
 
-            $adjustments[$originCode] = $this->adjustmentViewFactory->create($adjustment, $additionalAmount, $order->getCurrencyCode());
+            $adjustments[$originCode] = $this->adjustmentViewFactory->create(
+                $adjustment,
+                $additionalAmount
+            );
         }
         $orderView->adjustments = $adjustments;
+        $orderView->adjustmentsTotal = $order->getAdjustmentsTotalRecursively();
         $orderView->total = $order->getTotal();
         $orderView->customer = $this->customerViewFactory->create($customer);
 

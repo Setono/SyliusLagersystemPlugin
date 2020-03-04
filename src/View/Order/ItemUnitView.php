@@ -8,4 +8,7 @@ class ItemUnitView
 {
     /** @var int|null */
     public $total;
+
+    /** @var int|null */
+    public $adjustmentsTotal;
 }

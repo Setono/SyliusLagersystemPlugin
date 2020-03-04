@@ -22,6 +22,7 @@ class ItemUnitViewFactory implements ItemUnitViewFactoryInterface
         /** @var ItemUnitView $itemUnitView */
         $itemUnitView = new $this->itemUnitViewClass();
         $itemUnitView->total = $itemUnit->getTotal();
+        $itemUnitView->adjustmentsTotal = $itemUnit->getAdjustmentsTotal();
 
         return $itemUnitView;
     }

@@ -62,6 +62,9 @@ class OrderView
     /** @var int|null */
     public $total;
 
+    /** @var int|null */
+    public $adjustmentsTotal;
+
     /** @var CustomerView|null */
     public $customer;
 }
