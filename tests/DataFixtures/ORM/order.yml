@@ -1,15 +1,19 @@
 Sylius\Component\Order\Model\Adjustment:
     order_1_item_unit_1_adjustment_order_unit_promotion_1:
         type: order_unit_promotion
+        originCode: PROMO_UNIT_X
         amount: -99
     order_1_item_unit_1_adjustment_order_unit_promotion_2:
         type: order_unit_promotion
+        originCode: PROMO_UNIT_X
         amount: -99
     order_1_adjustment_shipping:
         type: shipping
+        originCode: UPS
         amount: 500
     order_1_adjustment_tax:
         type: tax
+        originCode: TAX_EU
         amount: 399
         neutral: true
 

@@ -53,6 +53,9 @@ class OrderView
     /** @var AddressView */
     public $billingAddress;
 
+    /** @var array|AdjustmentView[] */
+    public $adjustments = [];
+
     /** @var int|null */
     public $total;
 

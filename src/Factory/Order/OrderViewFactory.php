@@ -9,6 +9,7 @@ use Setono\SyliusLagersystemPlugin\Factory\Customer\CustomerViewFactoryInterface
 use Setono\SyliusLagersystemPlugin\Factory\PaymentViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\Factory\ShipmentViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Order\OrderView;
+use Sylius\Component\Core\Model\AdjustmentInterface;
 use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
@@ -29,6 +30,9 @@ class OrderViewFactory implements OrderViewFactoryInterface
     /** @var PaymentViewFactoryInterface */
     protected $paymentViewFactory;
 
+    /** @var AdjustmentViewFactoryInterface */
+    protected $adjustmentViewFactory;
+
     /** @var string */
     protected $orderViewClass;
 
@@ -37,12 +41,14 @@ class OrderViewFactory implements OrderViewFactoryInterface
         AddressViewFactoryInterface $addressViewFactory,
         ShipmentViewFactoryInterface $shipmentViewFactory,
         PaymentViewFactoryInterface $paymentViewFactory,
+        AdjustmentViewFactoryInterface $adjustmentViewFactory,
         string $orderViewClass
     ) {
         $this->customerViewFactory = $customerViewFactory;
         $this->addressViewFactory = $addressViewFactory;
         $this->shipmentViewFactory = $shipmentViewFactory;
         $this->paymentViewFactory = $paymentViewFactory;
+        $this->adjustmentViewFactory = $adjustmentViewFactory;
         $this->orderViewClass = $orderViewClass;
     }
 
@@ -95,6 +101,15 @@ class OrderViewFactory implements OrderViewFactoryInterface
             $orderView->billingAddress = $this->addressViewFactory->create($order->getBillingAddress());
         }
 
+        $adjustments = [];
+        /** @var AdjustmentInterface $adjustment */
+        foreach ($order->getAdjustmentsRecursively() as $adjustment) {
+            $originCode = $adjustment->getOriginCode();
+            $additionalAmount = isset($adjustments[$originCode]) ? $adjustments[$originCode]->amount->current : 0;
+
+            $adjustments[$originCode] = $this->adjustmentViewFactory->create($adjustment, $additionalAmount, $order->getCurrencyCode());
+        }
+        $orderView->adjustments = $adjustments;
         $orderView->total = $order->getTotal();
         $orderView->customer = $this->customerViewFactory->create($customer);
 

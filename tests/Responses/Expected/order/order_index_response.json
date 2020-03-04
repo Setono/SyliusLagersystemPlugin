@@ -59,6 +59,26 @@
                 "postcode": "65000",
                 "phoneNumber": "380951234567"
             },
+            "adjustments": {
+                "UPS": {
+                    "amount": {
+                        "current": 500,
+                        "currency": "USD"
+                    }
+                },
+                "TAX_EU": {
+                    "amount": {
+                        "current": 399,
+                        "currency": "USD"
+                    }
+                },
+                "PROMO_UNIT_X": {
+                    "amount": {
+                        "current": -198,
+                        "currency": "USD"
+                    }
+                }
+            },
             "total": 6299,
             "customer": {
                 "id": @integer@,
@@ -121,6 +141,7 @@
                 "company": "Setono",
                 "phoneNumber": "4512345678"
             },
+            "adjustments": [],
             "total": 0,
             "customer": {
                 "id": @integer@,
