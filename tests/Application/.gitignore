@@ -3,6 +3,7 @@
 /public/js
 /public/media/*
 !/public/media/image/
+!/public/media/image/pants.jpeg
 /public/media/image/*
 !/public/media/image/.gitignore
 

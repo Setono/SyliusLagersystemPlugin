@@ -13,6 +13,7 @@ Tests\Setono\SyliusLagersystemPlugin\Application\Entity\Product:
         translations: ["@product_mug_translation_en_us"]
         mainTaxon: "@taxon_category_mug"
         productTaxons: ["@product_taxon_mug"]
+        images: ["@product_mug_thumbnail", "@mug_variant_red_thumbnail"]
     product_digital:
         brand: "@brand_setono"
         code: "digital"
@@ -119,3 +120,12 @@ Sylius\Component\Core\Model\ProductTaxon:
         product: "@product_digital"
         taxon: "@taxon_category"
         position: 0
+
+Sylius\Component\Core\Model\ProductImage:
+    product_mug_thumbnail:
+        type: "thumbnail"
+        path: "/pants.jpeg"
+    mug_variant_red_thumbnail:
+        type: "thumbnail"
+        path: "/pants.jpeg"
+        productVariants: ["@mug_variant_red"]

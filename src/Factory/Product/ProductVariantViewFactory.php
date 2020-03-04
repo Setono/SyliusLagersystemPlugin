@@ -6,8 +6,10 @@ namespace Setono\SyliusLagersystemPlugin\Factory\Product;
 
 use Loevgaard\SyliusBarcodePlugin\Model\BarcodeAwareInterface;
 use Loevgaard\SyliusBrandPlugin\Model\BrandAwareInterface;
+use Setono\SyliusLagersystemPlugin\Factory\Image\ImageViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\Factory\Loevgaard\BrandViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Product\ProductVariantView;
+use Sylius\Component\Core\Model\ProductImageInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
 use Webmozart\Assert\Assert;
@@ -15,16 +17,21 @@ use Webmozart\Assert\Assert;
 class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
 {
     /** @var BrandViewFactoryInterface */
-    private $brandViewFactory;
+    protected $brandViewFactory;
+
+    /** @var ImageViewFactoryInterface */
+    protected $imageViewFactory;
 
     /** @var string */
-    private $productVariantViewClass;
+    protected $productVariantViewClass;
 
     public function __construct(
         BrandViewFactoryInterface $brandViewFactory,
+        ImageViewFactoryInterface $imageViewFactory,
         string $productVariantViewClass
     ) {
         $this->brandViewFactory = $brandViewFactory;
+        $this->imageViewFactory = $imageViewFactory;
         $this->productVariantViewClass = $productVariantViewClass;
     }
 
@@ -51,7 +58,7 @@ class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
         $variantView->weight = $weight;
         $variantView->onHand = $onHand;
 
-        /** @var ProductInterface|BrandAwareInterface|null $product */
+        /** @var ProductInterface|null $product */
         $product = $variant->getProduct();
         Assert::notNull($product);
 
@@ -64,6 +71,19 @@ class ProductVariantViewFactory implements ProductVariantViewFactoryInterface
 
         if ($variant instanceof BarcodeAwareInterface) {
             $variantView->barcode = $variant->getBarcode();
+        }
+
+        /** @var ProductImageInterface $image */
+        foreach ($product->getImages() as $image) {
+            $imageView = $this->imageViewFactory->create($image);
+
+            foreach ($image->getProductVariants() as $imagesVariant) {
+                if ($imagesVariant !== $variant) {
+                    continue;
+                }
+
+                $variantView->images[] = $imageView;
+            }
         }
 
         return $variantView;
