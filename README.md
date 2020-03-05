@@ -34,7 +34,7 @@ return [
 
 ```
 
-#### (optional) Install additional plugins
+#### Install additional plugins (optional)
 
 To render barcode for product variants at endpoints, install:
 
@@ -69,7 +69,7 @@ Like it was done at:
 
 - We assume that product variant's shipping weight stored in kilos at database.
 - Lagersystem API returns its weight in grams
-- Not tracked product variant's onHand property is always have 1 at Lagersystem API response
+- Product variants that are not tracked will have an `onHand` value of `1` in the API response
 
 ## Requests examples
 
