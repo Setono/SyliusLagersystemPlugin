@@ -1,0 +1,49 @@
+Sylius\Component\Currency\Model\Currency:
+    currency_usd:
+        code: USD
+    currency_dkk:
+        code: DKK
+    currency_sek:
+        code: SEK
+    currency_eur:
+        code: EUR
+
+Sylius\Component\Locale\Model\Locale:
+    locale_en_us:
+        code: en_US
+    locale_da_dk:
+        code: da_DK
+    locale_sv_se:
+        code: sv_SE
+
+Sylius\Component\Core\Model\Channel:
+    channel_us_web:
+        code: "US_WEB"
+        name: "US Channel"
+        hostname: "localhost"
+        baseCurrency: "@currency_usd"
+        defaultLocale: "@locale_en_us"
+        locales: ["@locale_en_us"]
+        color: "blue"
+        taxCalculationStrategy: "order_items_based"
+        enabled: true
+    channel_dk_web:
+        code: "DK_WEB"
+        name: "DK Channel"
+        hostname: "localhost"
+        baseCurrency: "@currency_dkk"
+        defaultLocale: "@locale_da_dk"
+        locales: ["@locale_da_dk"]
+        color: "black"
+        taxCalculationStrategy: "order_items_based"
+        enabled: true
+    channel_se_web:
+        code: "SE_WEB"
+        name: "SE Channel"
+        hostname: "localhost"
+        baseCurrency: "@currency_sek"
+        defaultLocale: "@locale_sv_se"
+        locales: ["@locale_sv_se"]
+        color: "red"
+        taxCalculationStrategy: "order_items_based"
+        enabled: true

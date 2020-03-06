@@ -1,0 +1,14 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\Setono\SyliusLagersystemPlugin\Application\Repository;
+
+use Setono\SyliusLagersystemPlugin\Repository\ProductVariantRepositoryInterface as LagersystemProductVariantRepositoryInterface;
+use Setono\SyliusLagersystemPlugin\Repository\ProductVariantRepositoryTrait as LagersystemProductVariantRepositoryTrait;
+use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductVariantRepository as BaseProductVariantRepository;
+
+class ProductVariantRepository extends BaseProductVariantRepository implements LagersystemProductVariantRepositoryInterface
+{
+    use LagersystemProductVariantRepositoryTrait;
+}

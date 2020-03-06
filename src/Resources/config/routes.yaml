@@ -1,10 +1,3 @@
-setono_sylius_lagersystem_admin_api_order_index:
-    path: /api/v{version}/lagersystem/orders
-    methods: [GET]
-    defaults:
-        _controller: sylius.controller.order:indexAction
-        _sylius:
-            section: admin_api
-            serialization_version: $version
-            serialization_groups: [ Lagersystem ]
-            grid: sylius_admin_order
+setono_sylius_lagersystem_api:
+    resource: "@SetonoSyliusLagersystemPlugin/Resources/config/routing/api.yaml"
+    prefix: /api/lagersystem

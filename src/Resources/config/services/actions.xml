@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="true" />
+
+        <service id="setono_sylius_lagersystem.controller.order.order_index_action"
+                 class="Setono\SyliusLagersystemPlugin\Controller\Order\OrderIndexAction">
+            <argument type="service" id="fos_rest.view_handler" />
+            <argument type="service" id="setono_sylius_lagersystem.view_repository.order_view_repository" />
+        </service>
+
+        <service id="setono_sylius_lagersystem.controller.product.product_variant_index_action"
+                 class="Setono\SyliusLagersystemPlugin\Controller\Product\ProductVariantIndexAction">
+            <argument type="service" id="fos_rest.view_handler" />
+            <argument type="service" id="setono_sylius_lagersystem.view_repository.product_variant_view_repository" />
+        </service>
+
+        <service id="setono_sylius_lagersystem.controller.product.product_variant_show_action"
+                 class="Setono\SyliusLagersystemPlugin\Controller\Product\ProductVariantShowAction">
+            <argument type="service" id="fos_rest.view_handler" />
+            <argument type="service" id="setono_sylius_lagersystem.factory.product_variant_view_factory" />
+            <argument type="service" id="sylius.repository.product_variant" />
+        </service>
+
+    </services>
+</container>

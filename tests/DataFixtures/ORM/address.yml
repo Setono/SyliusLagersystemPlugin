@@ -1,0 +1,20 @@
+Sylius\Component\Core\Model\Address:
+    customer_igor_home_address:
+        firstName: "Igor"
+        lastName: "Mukhin"
+        phoneNumber: "380951234567"
+        countryCode: "UA"
+        street: "Main street"
+        city: "Odesa"
+        postcode: "65000"
+        customer: "@customer_igor"
+    customer_igor_work_address:
+        firstName: "Joachim"
+        lastName: "Loevgaard"
+        phoneNumber: "4512345678"
+        company: "Setono"
+        countryCode: "DK"
+        street: "Main street"
+        city: "Aalborg"
+        postcode: "123456"
+        customer: "@customer_igor"

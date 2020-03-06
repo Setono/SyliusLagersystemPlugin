@@ -1,6 +1,5 @@
-jms_serializer:
-    metadata:
-        directories:
-            setono-sylius-lagersystem:
-                namespace_prefix: "Sylius\\Component\\Core"
-                path: "@SetonoSyliusLagersystemPlugin/Resources/config/serializer"
+liip_imagine:
+    filter_sets:
+        setono_sylius_lagersystem:
+            filters:
+                thumbnail: { size: [640, 480], mode: outbound }

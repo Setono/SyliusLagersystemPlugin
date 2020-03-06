@@ -1,0 +1,44 @@
+{
+    "page": 1,
+    "limit": 10,
+    "pages": 1,
+    "total": 3,
+    "links": {
+        "self": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10",
+        "first": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10",
+        "last": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10",
+        "next": "/api/lagersystem/product-variants?locale=en_US&page=1&limit=10"
+    },
+    "items": [
+        {
+            "id": @integer@,
+            "code": "red-mug",
+            "name": "Red Mug",
+            "barcode": "7891000074237",
+            "weight": 125,
+            "onHand": 7,
+            "images": [
+                {
+                    "type": "thumbnail",
+                    "path": "/pants.jpeg",
+                    "cachedPath": "http://localhost/media/cache/setono_sylius_lagersystem/pants.jpeg"
+                }
+            ]
+        },
+        {
+            "id": @integer@,
+            "code": "green-mug",
+            "name": "Green Mug",
+            "onHand": 3,
+            "images": []
+         },
+        {
+            "id": @integer@,
+            "code": "digital",
+            "name": "Digital product",
+            "onHand": 1,
+            "images": []
+        }
+
+    ]
+}

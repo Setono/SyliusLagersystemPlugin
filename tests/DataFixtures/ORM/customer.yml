@@ -1,0 +1,24 @@
+Sylius\Component\Core\Model\ShopUser:
+    user_igor:
+        plainPassword: "password"
+        roles: ["ROLE_USER"]
+        enabled: "true"
+        customer: "@customer_igor"
+        username: "igor.mukhin@gmail.com"
+        usernameCanonical: "igor.mukhin@gmail.com"
+
+Sylius\Component\Core\Model\Customer:
+    customer_igor:
+        firstName: "Igor"
+        lastName: "Mukhin"
+        email: "igor.mukhin@gmail.com"
+        emailCanonical: "igor.mukhin@gmail.com"
+        gender: "m"
+        group: "@retail"
+        phoneNumber: "380951234567"
+        birthday: <dateTimeBetween("-200 days", "now")>
+
+Sylius\Component\Customer\Model\CustomerGroup:
+    retail:
+        name: "Retail"
+        code: "retail"
