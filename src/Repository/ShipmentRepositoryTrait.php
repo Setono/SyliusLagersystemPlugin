@@ -9,7 +9,7 @@ use Sylius\Component\Core\OrderCheckoutStates;
 use Sylius\Component\Core\OrderPaymentStates;
 use Sylius\Component\Core\OrderShippingStates;
 
-trait OrderRepositoryTrait
+trait ShipmentRepositoryTrait
 {
     /**
      * @param string $alias
@@ -21,7 +21,9 @@ trait OrderRepositoryTrait
 
     public function createLagersystemListQueryBuilder(): QueryBuilder
     {
-        return $this->createQueryBuilder('o')
+        return $this->createQueryBuilder('shipment')
+            ->join('shipment.order', 'o')
+
             ->andWhere('o.checkoutState in (:checkoutStates)')
             ->setParameter('checkoutStates', [
                 OrderCheckoutStates::STATE_COMPLETED,

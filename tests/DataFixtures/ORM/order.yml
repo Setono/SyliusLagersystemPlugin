@@ -29,7 +29,8 @@ Sylius\Component\Core\Model\OrderItem:
     order_1_item_1:
         variant: "@mug_variant_red"
         unitPrice: 1999
-        units: ["@order_1_item_1_unit_1", "@order_1_item_1_unit_2"]
+        # Do not pass units like this, otherwise unexpected extra unit will be added
+        # units: ["@order_1_item_1_unit_1", "@order_1_item_1_unit_2"]
         adjustments: []
 
 Sylius\Component\Core\Model\Order:
@@ -110,6 +111,7 @@ Sylius\Component\Core\Model\Shipment:
     shipment_1:
         state: ready
         method: "@shipping_method_ups"
+        units: ["@order_1_item_1_unit_1", "@order_1_item_1_unit_2"]
     shipment_2:
         state: partially_shipped
         method: "@shipping_method_ups"

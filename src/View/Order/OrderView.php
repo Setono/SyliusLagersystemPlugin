@@ -7,7 +7,6 @@ namespace Setono\SyliusLagersystemPlugin\View\Order;
 use Setono\SyliusLagersystemPlugin\View\AddressView;
 use Setono\SyliusLagersystemPlugin\View\Customer\CustomerView;
 use Setono\SyliusLagersystemPlugin\View\PaymentView;
-use Setono\SyliusLagersystemPlugin\View\ShipmentView;
 
 class OrderView
 {
@@ -41,23 +40,17 @@ class OrderView
     /** @var array|PaymentView[] */
     public $payments = [];
 
-    /** @var string|null */
-    public $shippingState;
-
-    /** @var array|ShipmentView[] */
-    public $shipments = [];
-
     /** @var AddressView */
     public $shippingAddress;
 
     /** @var AddressView */
     public $billingAddress;
 
-    /** @var array|ItemView[] */
-    public $items = [];
-
     /** @var array|AdjustmentView[] */
     public $adjustments = [];
+
+    /** @var int|null */
+    public $itemsTotal;
 
     /** @var int|null */
     public $total;

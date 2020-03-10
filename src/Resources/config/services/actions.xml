@@ -6,10 +6,10 @@
     <services>
         <defaults public="true" />
 
-        <service id="setono_sylius_lagersystem.controller.order.order_index_action"
-                 class="Setono\SyliusLagersystemPlugin\Controller\Order\OrderIndexAction">
+        <service id="setono_sylius_lagersystem.controller.shipment.shipment_index_action"
+                 class="Setono\SyliusLagersystemPlugin\Controller\Shipping\ShipmentIndexAction">
             <argument type="service" id="fos_rest.view_handler" />
-            <argument type="service" id="setono_sylius_lagersystem.view_repository.order_view_repository" />
+            <argument type="service" id="setono_sylius_lagersystem.view_repository.shipment_view_repository" />
         </service>
 
         <service id="setono_sylius_lagersystem.controller.product.product_variant_index_action"

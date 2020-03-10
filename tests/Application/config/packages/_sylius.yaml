@@ -20,8 +20,8 @@ sylius_product:
                 model: Tests\Setono\SyliusLagersystemPlugin\Application\Entity\ProductVariant
                 repository: Tests\Setono\SyliusLagersystemPlugin\Application\Repository\ProductVariantRepository
 
-sylius_order:
+sylius_shipping:
     resources:
-        order:
+        shipment:
             classes:
-                repository: Tests\Setono\SyliusLagersystemPlugin\Application\Repository\OrderRepository
+                repository: Tests\Setono\SyliusLagersystemPlugin\Application\Repository\ShipmentRepository

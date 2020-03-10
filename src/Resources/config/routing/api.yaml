@@ -1,8 +1,8 @@
-setono_sylius_lagersystem_api_order_index:
-    path: /orders
+setono_sylius_lagersystem_api_shipment_index:
+    path: /shipments
     methods: [GET]
     defaults:
-        _controller: setono_sylius_lagersystem.controller.order.order_index_action
+        _controller: setono_sylius_lagersystem.controller.shipment.shipment_index_action
 
 setono_sylius_lagersystem_api_product_variant_index:
     path: /product-variants
