@@ -2,7 +2,7 @@
     "page": 1,
     "limit": 10,
     "pages": 1,
-    "total": 2,
+    "total": 3,
     "links": {
         "self": "/api/lagersystem/shipments?locale=en_US&page=1&limit=10",
         "first": "/api/lagersystem/shipments?locale=en_US&page=1&limit=10",
@@ -126,7 +126,70 @@
         },
         {
             "id": @integer@,
-            "state": "partially_shipped",
+            "state": "shipped",
+            "method": {
+                "code": "UPS",
+                "name": "UPS",
+                "description": "@string@"
+            },
+            "order": {
+                "id": @integer@,
+                "number": "000000002",
+                "channel": "US_WEB",
+                "currencyCode": "USD",
+                "localeCode": "en_US",
+                "state": "fulfilled",
+                "checkoutState": "completed",
+                "checkoutCompletedAt": "@string@.isDateTime()",
+                "paymentState": "paid",
+                "payments": [
+                    {
+                        "state": "completed",
+                        "method": {
+                            "code": "cash_on_delivery",
+                            "name": "Cash on delivery",
+                            "description": "@string@"
+                        }
+                    }
+                ],
+                "shippingAddress": {
+                    "firstName": "Joachim",
+                    "lastName": "Loevgaard",
+                    "countryCode": "DK",
+                    "street": "Main street",
+                    "city": "Aalborg",
+                    "postcode": "123456",
+                    "company": "Setono",
+                    "phoneNumber": "4512345678"
+                },
+                "billingAddress": {
+                    "firstName": "Joachim",
+                    "lastName": "Loevgaard",
+                    "countryCode": "DK",
+                    "street": "Main street",
+                    "city": "Aalborg",
+                    "postcode": "123456",
+                    "company": "Setono",
+                    "phoneNumber": "4512345678"
+                },
+                "adjustments": [],
+                "itemsTotal": 0,
+                "total": 0,
+                "adjustmentsTotal": 0,
+                "customer": {
+                    "id": @integer@,
+                    "firstName": "Igor",
+                    "lastName": "Mukhin",
+                    "email": "igor.mukhin@gmail.com",
+                    "birthday": "@string@.isDateTime()",
+                    "gender": "m",
+                    "phoneNumber": "380951234567"
+                }
+            }
+        },
+        {
+            "id": @integer@,
+            "state": "ready",
             "method": {
                 "code": "UPS",
                 "name": "UPS",

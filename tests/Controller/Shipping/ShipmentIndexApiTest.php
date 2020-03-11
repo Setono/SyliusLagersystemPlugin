@@ -32,7 +32,6 @@ final class ShipmentIndexApiTest extends JsonApiTestCase
 
     /**
      * @test
-     * @group current
      */
     public function index_returns_only_open_orders_in_lagersystem_terms(): void
     {
