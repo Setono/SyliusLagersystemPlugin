@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Setono\SyliusLagersystemPlugin\Controller\Order;
+namespace Tests\Setono\SyliusLagersystemPlugin\Controller\Shipping;
 
+use function Safe\sprintf;
 use Tests\Setono\SyliusLagersystemPlugin\Controller\JsonApiTestCase as BaseJsonApiTestCase;
 
 abstract class JsonApiTestCase extends BaseJsonApiTestCase
@@ -19,8 +20,15 @@ abstract class JsonApiTestCase extends BaseJsonApiTestCase
         'order.yml',
     ];
 
-    protected function getOrdersIndexUrl(): string
+    protected function getShipmentsIndexUrl(?string $localeCode = null): string
     {
-        return '/api/lagersystem/orders';
+        if (null !== $localeCode) {
+            return sprintf(
+                '/api/lagersystem/shipments?locale=%s',
+                $localeCode
+            );
+        }
+
+        return '/api/lagersystem/shipments';
     }
 }

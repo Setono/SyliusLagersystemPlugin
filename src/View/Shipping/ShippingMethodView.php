@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\ShopApiPlugin\View\Cart;
-
-namespace Setono\SyliusLagersystemPlugin\View;
+namespace Setono\SyliusLagersystemPlugin\View\Shipping;
 
 class ShippingMethodView
 {

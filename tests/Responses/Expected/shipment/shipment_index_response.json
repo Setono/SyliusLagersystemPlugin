@@ -1,0 +1,254 @@
+{
+    "page": 1,
+    "limit": 10,
+    "pages": 1,
+    "total": 3,
+    "links": {
+        "self": "/api/lagersystem/shipments?locale=en_US&page=1&limit=10",
+        "first": "/api/lagersystem/shipments?locale=en_US&page=1&limit=10",
+        "last": "/api/lagersystem/shipments?locale=en_US&page=1&limit=10",
+        "next": "/api/lagersystem/shipments?locale=en_US&page=1&limit=10"
+    },
+    "items": [
+        {
+            "id": @integer@,
+            "state": "ready",
+            "method": {
+                "code": "UPS",
+                "name": "UPS",
+                "description": "@string@"
+            },
+            "order": {
+                "id": @integer@,
+                "number": "000000001",
+                "channel": "US_WEB",
+                "currencyCode": "USD",
+                "localeCode": "en_US",
+                "state": "new",
+                "checkoutState": "completed",
+                "checkoutCompletedAt": "@string@.isDateTime()",
+                "paymentState": "authorized",
+                "payments": [
+                    {
+                        "state": "authorized",
+                        "method": {
+                            "code": "cash_on_delivery",
+                            "name": "Cash on delivery",
+                            "description": "@string@"
+                        }
+                    }
+                ],
+                "shippingAddress": {
+                    "firstName": "Igor",
+                    "lastName": "Mukhin",
+                    "countryCode": "UA",
+                    "street": "Main street",
+                    "city": "Odesa",
+                    "postcode": "65000",
+                    "phoneNumber": "380951234567"
+                },
+                "billingAddress": {
+                    "firstName": "Igor",
+                    "lastName": "Mukhin",
+                    "countryCode": "UA",
+                    "street": "Main street",
+                    "city": "Odesa",
+                    "postcode": "65000",
+                    "phoneNumber": "380951234567"
+                },
+                "adjustments": {
+                    "UPS": {
+                        "amount": 500,
+                        "neutral": false
+                    },
+                    "TAX_EU": {
+                        "amount": 399,
+                        "neutral": true
+                    },
+                    "PROMO_UNIT_X": {
+                        "amount": -198,
+                        "neutral": false
+                    }
+                },
+                "itemsTotal": 3800,
+                "total": 4300,
+                "adjustmentsTotal": 302,
+                "customer": {
+                    "id": @integer@,
+                    "firstName": "Igor",
+                    "lastName": "Mukhin",
+                    "email": "igor.mukhin@gmail.com",
+                    "birthday": "@string@.isDateTime()",
+                    "gender": "m",
+                    "phoneNumber": "380951234567"
+                }
+            },
+            "units": [
+                {
+                    "shippable": {
+                        "id": @integer@,
+                        "code": "red-mug",
+                        "name": "Red Mug",
+                        "barcode": "7891000074237",
+                        "weight": 125,
+                        "onHand": 7,
+                        "images": [
+                            {
+                                "type": "thumbnail",
+                                "path": "/pants.jpeg",
+                                "cachedPath": "http://localhost/media/cache/setono_sylius_lagersystem/pants.jpeg"
+                            }
+                        ]
+                    },
+                    "total": 1900,
+                    "adjustmentsTotal": -99
+                },
+                {
+                    "shippable": {
+                        "id": @integer@,
+                        "code": "red-mug",
+                        "name": "Red Mug",
+                        "barcode": "7891000074237",
+                        "weight": 125,
+                        "onHand": 7,
+                        "images": [
+                            {
+                                "type": "thumbnail",
+                                "path": "/pants.jpeg",
+                                "cachedPath": "http://localhost/media/cache/setono_sylius_lagersystem/pants.jpeg"
+                            }
+                        ]
+                    },
+                    "total": 1900,
+                    "adjustmentsTotal": -99
+                 }
+            ]
+        },
+        {
+            "id": @integer@,
+            "state": "shipped",
+            "method": {
+                "code": "UPS",
+                "name": "UPS",
+                "description": "@string@"
+            },
+            "order": {
+                "id": @integer@,
+                "number": "000000002",
+                "channel": "US_WEB",
+                "currencyCode": "USD",
+                "localeCode": "en_US",
+                "state": "fulfilled",
+                "checkoutState": "completed",
+                "checkoutCompletedAt": "@string@.isDateTime()",
+                "paymentState": "paid",
+                "payments": [
+                    {
+                        "state": "completed",
+                        "method": {
+                            "code": "cash_on_delivery",
+                            "name": "Cash on delivery",
+                            "description": "@string@"
+                        }
+                    }
+                ],
+                "shippingAddress": {
+                    "firstName": "Joachim",
+                    "lastName": "Loevgaard",
+                    "countryCode": "DK",
+                    "street": "Main street",
+                    "city": "Aalborg",
+                    "postcode": "123456",
+                    "company": "Setono",
+                    "phoneNumber": "4512345678"
+                },
+                "billingAddress": {
+                    "firstName": "Joachim",
+                    "lastName": "Loevgaard",
+                    "countryCode": "DK",
+                    "street": "Main street",
+                    "city": "Aalborg",
+                    "postcode": "123456",
+                    "company": "Setono",
+                    "phoneNumber": "4512345678"
+                },
+                "adjustments": [],
+                "itemsTotal": 0,
+                "total": 0,
+                "adjustmentsTotal": 0,
+                "customer": {
+                    "id": @integer@,
+                    "firstName": "Igor",
+                    "lastName": "Mukhin",
+                    "email": "igor.mukhin@gmail.com",
+                    "birthday": "@string@.isDateTime()",
+                    "gender": "m",
+                    "phoneNumber": "380951234567"
+                }
+            }
+        },
+        {
+            "id": @integer@,
+            "state": "ready",
+            "method": {
+                "code": "UPS",
+                "name": "UPS",
+                "description": "@string@"
+            },
+            "order": {
+                "id": @integer@,
+                "number": "000000002",
+                "channel": "US_WEB",
+                "currencyCode": "USD",
+                "localeCode": "en_US",
+                "state": "fulfilled",
+                "checkoutState": "completed",
+                "checkoutCompletedAt": "@string@.isDateTime()",
+                "paymentState": "paid",
+                "payments": [
+                    {
+                        "state": "completed",
+                        "method": {
+                            "code": "cash_on_delivery",
+                            "name": "Cash on delivery",
+                            "description": "@string@"
+                        }
+                    }
+                ],
+                "shippingAddress": {
+                    "firstName": "Joachim",
+                    "lastName": "Loevgaard",
+                    "countryCode": "DK",
+                    "street": "Main street",
+                    "city": "Aalborg",
+                    "postcode": "123456",
+                    "company": "Setono",
+                    "phoneNumber": "4512345678"
+                },
+                "billingAddress": {
+                    "firstName": "Joachim",
+                    "lastName": "Loevgaard",
+                    "countryCode": "DK",
+                    "street": "Main street",
+                    "city": "Aalborg",
+                    "postcode": "123456",
+                    "company": "Setono",
+                    "phoneNumber": "4512345678"
+                },
+                "adjustments": [],
+                "itemsTotal": 0,
+                "total": 0,
+                "adjustmentsTotal": 0,
+                "customer": {
+                    "id": @integer@,
+                    "firstName": "Igor",
+                    "lastName": "Mukhin",
+                    "email": "igor.mukhin@gmail.com",
+                    "birthday": "@string@.isDateTime()",
+                    "gender": "m",
+                    "phoneNumber": "380951234567"
+                }
+            }
+        }
+    ]
+}

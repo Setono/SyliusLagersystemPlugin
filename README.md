@@ -62,6 +62,7 @@ imports:
 
 Like it was done at:
 
+- [tests/Application/Entity](tests/Application/Entity)
 - [tests/Application/Repository](tests/Application/Repository)
 - [tests/Application/config/packages/_sylius.yaml](tests/Application/config/packages/_sylius.yaml)
 
@@ -128,10 +129,10 @@ curl "$SYLIUS_HOST/api/lagersystem/product-variants/$SYLIUS_SOME_PRODUCT_VARIANT
     -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
 ```
 
-### Order list enpoint
+### Shipments list enpoint
 
 ```bash
-curl "$SYLIUS_HOST/api/lagersystem/orders?limit=3" \
+curl "$SYLIUS_HOST/api/lagersystem/shipments?locale=en_US&limit=3" \
     -H "Authorization: Bearer $SYLIUS_ADMIN_API_ACCESS_TOKEN"
 ```
 

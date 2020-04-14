@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Setono\SyliusLagersystemPlugin\Factory;
+namespace Setono\SyliusLagersystemPlugin\Factory\Shipping;
 
-use Setono\SyliusLagersystemPlugin\View\ShippingMethodView;
+use Setono\SyliusLagersystemPlugin\View\Shipping\ShippingMethodView;
 use Sylius\Component\Core\Model\ShipmentInterface;
 use Webmozart\Assert\Assert;
 

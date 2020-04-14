@@ -7,14 +7,11 @@ namespace Setono\SyliusLagersystemPlugin\Factory\Order;
 use Setono\SyliusLagersystemPlugin\Factory\Address\AddressViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\Factory\Customer\CustomerViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\Factory\PaymentViewFactoryInterface;
-use Setono\SyliusLagersystemPlugin\Factory\ShipmentViewFactoryInterface;
 use Setono\SyliusLagersystemPlugin\View\Order\OrderView;
 use Sylius\Component\Core\Model\AdjustmentInterface;
 use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\OrderInterface;
-use Sylius\Component\Core\Model\OrderItemInterface;
 use Sylius\Component\Core\Model\PaymentInterface;
-use Sylius\Component\Core\Model\ShipmentInterface;
 use Webmozart\Assert\Assert;
 
 class OrderViewFactory implements OrderViewFactoryInterface
@@ -25,17 +22,11 @@ class OrderViewFactory implements OrderViewFactoryInterface
     /** @var AddressViewFactoryInterface */
     protected $addressViewFactory;
 
-    /** @var ShipmentViewFactoryInterface */
-    protected $shipmentViewFactory;
-
     /** @var PaymentViewFactoryInterface */
     protected $paymentViewFactory;
 
     /** @var AdjustmentViewFactoryInterface */
     protected $adjustmentViewFactory;
-
-    /** @var ItemViewFactoryInterface */
-    protected $itemFactory;
 
     /** @var string */
     protected $orderViewClass;
@@ -43,18 +34,14 @@ class OrderViewFactory implements OrderViewFactoryInterface
     public function __construct(
         CustomerViewFactoryInterface $customerViewFactory,
         AddressViewFactoryInterface $addressViewFactory,
-        ShipmentViewFactoryInterface $shipmentViewFactory,
         PaymentViewFactoryInterface $paymentViewFactory,
         AdjustmentViewFactoryInterface $adjustmentViewFactory,
-        ItemViewFactoryInterface $itemFactory,
         string $orderViewClass
     ) {
         $this->customerViewFactory = $customerViewFactory;
         $this->addressViewFactory = $addressViewFactory;
-        $this->shipmentViewFactory = $shipmentViewFactory;
         $this->paymentViewFactory = $paymentViewFactory;
         $this->adjustmentViewFactory = $adjustmentViewFactory;
-        $this->itemFactory = $itemFactory;
         $this->orderViewClass = $orderViewClass;
     }
 
@@ -86,21 +73,7 @@ class OrderViewFactory implements OrderViewFactoryInterface
         $orderView->state = $order->getState();
         $orderView->checkoutState = $order->getCheckoutState();
         $orderView->checkoutCompletedAt = $checkoutCompletedAt->format('c');
-        $orderView->shippingState = $order->getShippingState();
         $orderView->paymentState = $order->getPaymentState();
-
-        /** @var OrderItemInterface $item */
-        foreach ($order->getItems() as $item) {
-            $orderView->items[] = $this->itemFactory->create(
-                $item,
-                $localeCode
-            );
-        }
-
-        /** @var ShipmentInterface $shipment */
-        foreach ($order->getShipments() as $shipment) {
-            $orderView->shipments[] = $this->shipmentViewFactory->create($shipment, $localeCode);
-        }
 
         /** @var PaymentInterface $payment */
         foreach ($order->getPayments() as $payment) {
@@ -128,6 +101,7 @@ class OrderViewFactory implements OrderViewFactoryInterface
         }
         $orderView->adjustments = $adjustments;
         $orderView->adjustmentsTotal = $order->getAdjustmentsTotalRecursively();
+        $orderView->itemsTotal = $order->getItemsTotal();
         $orderView->total = $order->getTotal();
         $orderView->customer = $this->customerViewFactory->create($customer);
 

@@ -2,35 +2,36 @@
 
 declare(strict_types=1);
 
-namespace Setono\SyliusLagersystemPlugin\Controller\Order;
+namespace Setono\SyliusLagersystemPlugin\Controller\Shipping;
 
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\ViewHandlerInterface;
 use Setono\SyliusLagersystemPlugin\Model\PaginatorDetails;
-use Setono\SyliusLagersystemPlugin\ViewRepository\Order\OrderViewRepositoryInterface;
+use Setono\SyliusLagersystemPlugin\ViewRepository\Shipment\ShipmentViewRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final class OrderIndexAction
+final class ShipmentIndexAction
 {
     /** @var ViewHandlerInterface */
     private $viewHandler;
 
-    /** @var OrderViewRepositoryInterface */
-    private $orderViewRepository;
+    /** @var ShipmentViewRepositoryInterface */
+    private $shipmentViewRepository;
 
     public function __construct(
         ViewHandlerInterface $viewHandler,
-        OrderViewRepositoryInterface $orderViewRepository
+        ShipmentViewRepositoryInterface $shipmentViewRepository
     ) {
         $this->viewHandler = $viewHandler;
-        $this->orderViewRepository = $orderViewRepository;
+        $this->shipmentViewRepository = $shipmentViewRepository;
     }
 
     public function __invoke(Request $request): Response
     {
-        $page = $this->orderViewRepository->getAllPaginated(
-            new PaginatorDetails($request->attributes->get('_route'), $request->query->all())
+        $page = $this->shipmentViewRepository->getAllPaginated(
+            new PaginatorDetails($request->attributes->get('_route'), $request->query->all()),
+            $request->query->get('locale')
         );
 
         return $this->viewHandler->handle(

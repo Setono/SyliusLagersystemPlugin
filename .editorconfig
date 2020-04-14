@@ -88,3 +88,7 @@ indent_size = 4
 [phpunit.xml{,.dist}]
 indent_style = space
 indent_size = 4
+
+[tests/Responses/Expected/**/*.json]
+indent_style = space
+indent_size = 4
